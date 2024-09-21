@@ -23,11 +23,20 @@ import "react-gallery-carousel/dist/index.css";
 import { imageData } from "../imageData";
 import { foglalkozasData } from "../foglalkozasData";
 import AOS from 'aos';
+import { FaArrowLeft, FaArrowRight, FaPlay, FaExpand, FaExpandArrowsAlt } from 'react-icons/fa';
+import { MdOutlineSmartDisplay, MdOutlinePausePresentation } from "react-icons/md";
+import { LuArrowRightSquare, LuArrowLeftSquare } from "react-icons/lu";
+import { useMediaQuery } from "@chakra-ui/react";
+
 
 const Galeria = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [actualData, setActualData] = useState({});
     const [carouselStyle, setCarouselStyle] = useState({});
+    const [isMobile] = useMediaQuery("(max-width: 768px)");
+
+    const iconSize = isMobile ? 50 : 80;
+    const fontSizezz = isMobile ? '35px' : '35px'
 
     const handleShow = (item) => {
         setActualData(item);
@@ -36,10 +45,10 @@ const Galeria = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 700, 
-            once: false,   
+            duration: 700,
+            once: false,
         });
-        AOS.refresh(); 
+        AOS.refresh();
     }, []);
 
     useEffect(() => {
@@ -189,10 +198,10 @@ const Galeria = () => {
 
                     <Modal isOpen={isOpen} onClose={onClose} size="4xl">
                         <ModalOverlay />
-                        <ModalContent display='flex' justifyContent='center' height={{base:'480px',md:'780px'}} width={{base:'370px',md:'880px'}}>
+                        <ModalContent display='flex' justifyContent='center' height={{ base: '480px', md: '780px' }} width={{ base: '370px', md: '880px' }}>
                             <ModalHeader textAlign="center">{actualData.title}</ModalHeader>
                             <ModalCloseButton />
-                            <ModalBody d="flex" justifyContent="center" height={{base:'370px',md:'600px'}} width={{base:'370px',md:'880px'}}>
+                            <ModalBody d="flex" justifyContent="center" height={{ base: '370px', md: '600px' }} width={{ base: '370px', md: '880px' }}>
                                 <Carousel
                                     className="carousel-custom"
                                     images={
@@ -202,7 +211,13 @@ const Galeria = () => {
                                         }))
                                     }
                                     startIndex={0}
-                                    style={{ height: '100%', width: '100%' }}  // Carousel size follows ModalBody size
+                                    leftIcon={<LuArrowLeftSquare color="rgb(236, 201, 75)" style={{position:'relative', left:'15px'}} size={iconSize} />}
+                                    rightIcon={<LuArrowRightSquare color="rgb(236, 201, 75)" style={{position:'relative', right:'15px'}} size={iconSize} />}
+                                    playIcon={<MdOutlineSmartDisplay color="rgb(236, 201, 75)" style={{position:'relative', left:'15px'}} size={iconSize} />}
+                                    pauseIcon={<MdOutlinePausePresentation color='rgb(236, 201, 75)' style={{position:'relative', left:'15px'}} size={iconSize} />}
+                                    expandIcon={<FaExpandArrowsAlt color="rgb(236, 201, 75)" size={iconSize} />}
+                                    
+                                    style={{ height: '100%', width: '100%', fontSize: isMobile ? '25px' :'35px', fill:'white' }}
                                 />
                             </ModalBody>
 

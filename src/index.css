@@ -60,3 +60,29 @@ code {
     transition: none !important;
   }
 }
+
+
+._3WRGR {
+  fill: rgb(236, 201, 75)!important;  /* Az SVG ikonok színe */
+  width: 80px!important;  /* Az ikon szélessége */
+  height: 80px!important; /* Az ikon magassága */
+  position: relative;
+  right: 15px;
+  top: 15px;
+}
+
+.carousel-custom .gallery-carousel__left-icon, 
+.carousel-custom .gallery-carousel__right-icon {
+  background-color: transparent; /* Az ikon mögötti háttér színének eltüntetése */
+  border-radius: 50%;  /* Az ikonok lekerekítése */
+}
+
+.carousel-custom .gallery-carousel__button {
+  background-color: rgba(0, 0, 0, 0.7); /* Gomb háttér színének módosítása */
+  border-radius: 50%;
+}
+
+.__JnHV{
+background-color: rgb(236, 201, 75)!important;
+}
+
