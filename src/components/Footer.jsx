@@ -4,7 +4,9 @@ import { FaFacebook, FaYoutube } from 'react-icons/fa';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { Link as RouterLink } from 'react-router-dom';
 import { MdKeyboardArrowRight } from "react-icons/md";
-
+import { FaSquareFacebook } from "react-icons/fa6";
+import { SlSocialYoutube } from "react-icons/sl";
+import { RiFacebookBoxLine } from "react-icons/ri";
 const Footer = () => {
   const mapContainerStyle = {
     width: '450px',
@@ -82,29 +84,23 @@ const Footer = () => {
 
               <Box display="flex" justifyContent="center" alignItems="center" gap={4}>
                 <Link
-                  border="1px"
-                  p={3}
-                  rounded="5px"
                   display="inline-flex"  
                   alignItems="center"
                   href="https://www.facebook.com/bastyaidosotthon"
                   _hover={{ color: 'yellow.400' }}
                   target="_blank"
                 >
-                  <Icon as={FaFacebook} w={10} h={10} />
+                  <Icon as={RiFacebookBoxLine } fontSize='50px' />
                 </Link>
 
                 <Link
-                  border="1px"
-                  p={3} 
-                  rounded="5px"
                   display="inline-flex"
                   alignItems="center"
                   href="https://www.youtube.com/watch?v=2ixYV8p_GT4&ab_channel=Tiszavasv%C3%A1riTV"
                   _hover={{ color: 'yellow.400' }}
                   target="_blank"
                 >
-                  <Icon as={FaYoutube} w={10} h={10} />
+                  <Icon as={SlSocialYoutube} fontSize='50px' />
                 </Link>
               </Box>
             </HStack>
