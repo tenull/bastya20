@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+.mainheader{
+  background-image: linear-gradient(100deg, var(--e-global-color-astglobalcolor0) 0%, #FFFFFF 90%);
+}
+
+/* Általános beállítások az egész oldalra */
+::selection {
+  background-color: black; /* Kijelölés háttérszíne */
+  color: white;            /* Kijelölt szöveg színe */
+}
+
+/* Csak egy adott elemre alkalmazva */
+.some-class::selection {
+  background-color: black;
+  color: white;
+}
+
+
+.curved-text {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: bottom left;
+  font-size: 28px;
+  color: white;
+  margin-bottom: -2px;
+}
+
+.curved-text::after {
+  content: 'BÁSTYA';
+  display: block;
+  transform: rotate(25deg);
+  transform-origin: bottom right;
+}
+
+.appp{
+  font-family: 'Roboto';
+}
+
+@media (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
