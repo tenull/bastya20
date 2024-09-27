@@ -211,13 +211,13 @@ const Galeria = () => {
                                         }))
                                     }
                                     startIndex={0}
-                                    leftIcon={<LuArrowLeftSquare color="rgb(236, 201, 75)" style={{position:'relative', left:'15px'}} size={iconSize} />}
-                                    rightIcon={<LuArrowRightSquare color="rgb(236, 201, 75)" style={{position:'relative', right:'15px'}} size={iconSize} />}
-                                    playIcon={<MdOutlineSmartDisplay color="rgb(236, 201, 75)" style={{position:'relative', left:'15px'}} size={iconSize} />}
-                                    pauseIcon={<MdOutlinePausePresentation color='rgb(236, 201, 75)' style={{position:'relative', left:'15px'}} size={iconSize} />}
+                                    leftIcon={<LuArrowLeftSquare color="rgb(236, 201, 75)" style={{ position: 'relative', left: '15px' }} size={iconSize} />}
+                                    rightIcon={<LuArrowRightSquare color="rgb(236, 201, 75)" style={{ position: 'relative', right: '15px' }} size={iconSize} />}
+                                    playIcon={<MdOutlineSmartDisplay color="rgb(236, 201, 75)" style={{ position: 'relative', left: '15px' }} size={iconSize} />}
+                                    pauseIcon={<MdOutlinePausePresentation color='rgb(236, 201, 75)' style={{ position: 'relative', left: '15px' }} size={iconSize} />}
                                     expandIcon={<FaExpandArrowsAlt color="rgb(236, 201, 75)" size={iconSize} />}
-                                    
-                                    style={{ height: '100%', width: '100%', fontSize: isMobile ? '25px' :'35px', fill:'white' }}
+
+                                    style={{ height: '100%', width: '100%', fontSize: isMobile ? '25px' : '35px', fill: 'white' }}
                                 />
                             </ModalBody>
 
