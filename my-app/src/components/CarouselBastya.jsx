@@ -15,6 +15,8 @@ const CarouselBastya = () => {
     slidesToScroll: 1,
     pauseOnHover: false,
     pauseOnFocus: false,
+    fade: true,        
+    cssEase: "ease-in-out",
   };
 
   const cards = [
