@@ -16,8 +16,70 @@ import MotionInView from "../components/MotionView";
 import { Link as ReactLink } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
+function DocumentItem({ title, description, link }) {
+  const isPdf = link.toLowerCase().endsWith(".pdf");
+  const isDoc = link.toLowerCase().endsWith(".doc") || link.toLowerCase().endsWith(".docx");
 
-function DocumentGroup({ title, subtitle, items }) {
+  return (
+    <MotionInView key={link} y={10}>
+      <LinkBox
+        as="article"
+        role="group"
+        bg="white"
+        borderWidth="1px"
+        borderColor="gray.200"
+        rounded="2xl"
+        p={{ base: 4, md: 5 }}
+        boxShadow="sm"
+        _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
+        transition="all 0.2s ease"
+      >
+        <Flex align="center" gap={4}>
+          <Box flex="1" minW={0}>
+            <Heading
+              as="h3"
+              fontSize={{ base: "md", md: "lg" }}
+              fontWeight="900"
+              textTransform="uppercase"
+            >
+              <LinkOverlay
+                href={link}
+                target={isPdf ? "_blank" : undefined}
+                rel={isPdf ? "noreferrer" : undefined}
+                download={isDoc ? true : undefined}
+              >
+                {title}
+              </LinkOverlay>
+            </Heading>
+
+            {description ? (
+              <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
+                {description}
+              </Text>
+            ) : null}
+          </Box>
+
+          <Box
+            w="48px"
+            h="48px"
+            rounded="xl"
+            borderWidth="1px"
+            borderColor="gray.200"
+            display="grid"
+            placeItems="center"
+            _groupHover={{ borderColor: "yellow.400" }}
+          >
+            <Icon as={DownloadIcon} boxSize={6} />
+          </Box>
+        </Flex>
+      </LinkBox>
+    </MotionInView>
+  );
+}
+
+
+function DocumentGroup({ title, subtitle, items, children }) {
+
     return (
         <Box py={{ base: 10, md: 12 }} bg="white">
             <Container maxW="container.lg">
@@ -35,70 +97,16 @@ function DocumentGroup({ title, subtitle, items }) {
                     </Stack>
                 </MotionInView>
 
-                <Stack spacing={4} mt={8}>
-                    {items.map((item, index) => {
-                        const isPdf = item.link.toLowerCase().endsWith(".pdf");
-                        const isDoc =
-                            item.link.toLowerCase().endsWith(".doc") ||
-                            item.link.toLowerCase().endsWith(".docx");
-
-                        return (
-                            <MotionInView key={item.link} delay={index * 0.05} y={10}>
-                                <LinkBox
-                                    as="article"
-                                    role="group"
-                                    bg="white"
-                                    borderWidth="1px"
-                                    borderColor="gray.200"
-                                    rounded="2xl"
-                                    p={{ base: 4, md: 5 }}
-                                    boxShadow="sm"
-                                    _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
-                                    transition="all 0.2s ease"
-                                >
-                                    <Flex align="center" gap={4}>
-                                        <Box flex="1" minW={0}>
-                                            <Heading
-                                                as="h3"
-                                                fontSize={{ base: "md", md: "lg" }}
-                                                fontWeight="900"
-                                                textTransform="uppercase"
-                                            >
-                                                <LinkOverlay
-                                                    href={item.link}
-                                                    target={isPdf ? "_blank" : undefined}
-                                                    rel={isPdf ? "noreferrer" : undefined}
-                                                    download={isDoc ? true : undefined}
-                                                >
-                                                    {item.title}
-                                                </LinkOverlay>
-                                            </Heading>
-
-                                            {item.description ? (
-                                                <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
-                                                    {item.description}
-                                                </Text>
-                                            ) : null}
-                                        </Box>
-
-                                        <Box
-                                            w="48px"
-                                            h="48px"
-                                            rounded="xl"
-                                            borderWidth="1px"
-                                            borderColor="gray.200"
-                                            display="grid"
-                                            placeItems="center"
-                                            _groupHover={{ borderColor: "yellow.400" }}
-                                        >
-                                            <Icon as={DownloadIcon} boxSize={6} />
-                                        </Box>
-                                    </Flex>
-                                </LinkBox>
-                            </MotionInView>
-                        );
-                    })}
-                </Stack>
+                {/* ✅ Ha van children, azt rendereljük, különben items listát */}
+                {children ? (
+                    <Box mt={8}>{children}</Box>
+                ) : (
+                    <Stack spacing={4} mt={8}>
+                        {items?.map((item) => (
+                            <DocumentItem key={item.link} {...item} />
+                        ))}
+                    </Stack>
+                )}
             </Container>
         </Box>
     );
@@ -106,6 +114,8 @@ function DocumentGroup({ title, subtitle, items }) {
 
 
 const Formanyomtatvanyok = () => {
+
+    
 
     const otthonDocs = [
         {
@@ -133,33 +143,50 @@ const Formanyomtatvanyok = () => {
         },
     ];
 
-    const nappaliDocs = [
+    const nappaliDocGroups = [
         {
-            title: "Kérelem a fogyatékos személyek nappali ellátása",
-            description:
-                "A fogyatékos személyek nappali ellátása,mint személyes gondoskodást nyújtó szociális ellátás igénybevételére",
-            link: "/images/dokumentum/nappali/fogykerelem.docx",
+            section: "Demens Idősek Nappali Ellátása",
+            items: [
+                {
+                    title: "Kérelem",
+                    description:
+                        "Az idősek, demens személyek nappali ellátásának igénybevételéhez.",
+                    link: "/images/dokumentum/nappali/idoskerelem.docx",
+                },
+                {
+                    title: "Megállapodás",
+                    description:
+                        "Idős (ezen belül demens személyek) nappali ellátása.",
+                    link: "/images/dokumentum/nappali/idosmegallapodas.docx",
+                },
+            ],
         },
         {
-            title: "Kérelem",
-            description:
-                "Az idősek, demensek nappali ellátása, mint a személyes gondoskodást nyújtó szociális ellátás igénybevételéhez",
-            link: "/images/dokumentum/nappali/fogykerelem.docx",
+            section: "Fogyatékkal élők nappali ellátása",
+            items: [
+                {
+                    title: "Kérelem",
+                    description:
+                        "A fogyatékos személyek nappali ellátásának igénybevételéhez.",
+                    link: "/images/dokumentum/nappali/fogykerelem.docx",
+                },
+                {
+                    title: "Megállapodás",
+                    description:
+                        "Fogyatékossággal élő személyek nappali ellátása.",
+                    link: "/images/dokumentum/nappali/megallapodasfogy.docx",
+                },
+            ],
         },
         {
-            title: "Megállapodás",
-            description: "Fogyatékossággal élő személyek nappali ellátása",
-            link: "/images/dokumentum/nappali/megallapodasfogy.docx",
-        },
-        {
-            title: "Megállapodás",
-            description: "Támogató szolgálat.",
-            link: "/images/dokumentum/nappali/megallapodastamogatoszolgalat.docx",
-        },
-        {
-            title: "Megállapodás",
-            description: "Idős (ezen belül demens személyek) nappali ellátása.",
-            link: "/images/dokumentum/nappali/idosmegallapodas.docx",
+            section: "Támogató szolgáltatás",
+            items: [
+                {
+                    title: "Megállapodás",
+                    description: "Támogató szolgálat.",
+                    link: "/images/dokumentum/nappali/megallapodastamogatoszolgalat.docx",
+                },
+            ],
         },
     ];
 
@@ -232,13 +259,30 @@ const Formanyomtatvanyok = () => {
                 items={otthonDocs}
             />
 
-            <Box h="1px" bg="gray.200" /> {/* opcionális elválasztó */}
+            <Box h="1px" bg="gray.200" />
 
             <DocumentGroup
+
                 title="NAPPALI ELLÁTÁS – DOKUMENTUMOK"
                 subtitle="A nappali ellátások igényléséhez szükséges nyomtatványok."
-                items={nappaliDocs}
-            />
+            >
+                {nappaliDocGroups.map((group) => (
+                    <Box key={group.section} mt={10}>
+                        <Heading fontSize="xl" fontWeight="900" mb={2} textAlign="center">
+                            {group.section}
+                        </Heading>
+
+                        <Box w="60px" h="3px" bg="yellow.400" rounded="full" mb={4} mx="auto" />
+
+                        <Stack spacing={4}>
+                            {group.items.map((item) => (
+                                <DocumentItem key={item.link} {...item} />
+                            ))}
+                        </Stack>
+                    </Box>
+                ))}
+            </DocumentGroup>
+
 
         </Box>
     );
