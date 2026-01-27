@@ -25,6 +25,11 @@ const relatedDocs = [
       "Az idősek, demensek nappali ellátása, mint a személyes gondoskodást nyújtó szociális ellátás igénybevételéhez",
     link: "/images/dokumentum/nappali/fogykerelem.docx",
   },
+  {
+    title: "Megállapodás",
+    description: "Idős (ezen belül demens személyek) nappali ellátása.",
+    link: "/images/dokumentum/nappali/idosmegallapodas.docx",
+  },
 ];
 
 

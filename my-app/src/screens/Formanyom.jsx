@@ -18,96 +18,96 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 
 
 function DocumentGroup({ title, subtitle, items }) {
-  return (
-    <Box py={{ base: 10, md: 12 }} bg="white">
-      <Container maxW="container.lg">
-        <MotionInView y={10}>
-          <Stack align="center" textAlign="center" spacing={3}>
-            <Heading fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
-              {title}
-            </Heading>
-            <Box w="90px" h="4px" bg="yellow.400" rounded="full" />
-            {subtitle ? (
-              <Text color="gray.600" maxW="70ch">
-                {subtitle}
-              </Text>
-            ) : null}
-          </Stack>
-        </MotionInView>
+    return (
+        <Box py={{ base: 10, md: 12 }} bg="white">
+            <Container maxW="container.lg">
+                <MotionInView y={10}>
+                    <Stack align="center" textAlign="center" spacing={3}>
+                        <Heading fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
+                            {title}
+                        </Heading>
+                        <Box w="90px" h="4px" bg="yellow.400" rounded="full" />
+                        {subtitle ? (
+                            <Text color="gray.600" maxW="70ch">
+                                {subtitle}
+                            </Text>
+                        ) : null}
+                    </Stack>
+                </MotionInView>
 
-        <Stack spacing={4} mt={8}>
-          {items.map((item, index) => {
-            const isPdf = item.link.toLowerCase().endsWith(".pdf");
-            const isDoc =
-              item.link.toLowerCase().endsWith(".doc") ||
-              item.link.toLowerCase().endsWith(".docx");
+                <Stack spacing={4} mt={8}>
+                    {items.map((item, index) => {
+                        const isPdf = item.link.toLowerCase().endsWith(".pdf");
+                        const isDoc =
+                            item.link.toLowerCase().endsWith(".doc") ||
+                            item.link.toLowerCase().endsWith(".docx");
 
-            return (
-              <MotionInView key={item.link} delay={index * 0.05} y={10}>
-                <LinkBox
-                  as="article"
-                  role="group"
-                  bg="white"
-                  borderWidth="1px"
-                  borderColor="gray.200"
-                  rounded="2xl"
-                  p={{ base: 4, md: 5 }}
-                  boxShadow="sm"
-                  _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
-                  transition="all 0.2s ease"
-                >
-                  <Flex align="center" gap={4}>
-                    <Box flex="1" minW={0}>
-                      <Heading
-                        as="h3"
-                        fontSize={{ base: "md", md: "lg" }}
-                        fontWeight="900"
-                        textTransform="uppercase"
-                      >
-                        <LinkOverlay
-                          href={item.link}
-                          target={isPdf ? "_blank" : undefined}
-                          rel={isPdf ? "noreferrer" : undefined}
-                          download={isDoc ? true : undefined}
-                        >
-                          {item.title}
-                        </LinkOverlay>
-                      </Heading>
+                        return (
+                            <MotionInView key={item.link} delay={index * 0.05} y={10}>
+                                <LinkBox
+                                    as="article"
+                                    role="group"
+                                    bg="white"
+                                    borderWidth="1px"
+                                    borderColor="gray.200"
+                                    rounded="2xl"
+                                    p={{ base: 4, md: 5 }}
+                                    boxShadow="sm"
+                                    _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
+                                    transition="all 0.2s ease"
+                                >
+                                    <Flex align="center" gap={4}>
+                                        <Box flex="1" minW={0}>
+                                            <Heading
+                                                as="h3"
+                                                fontSize={{ base: "md", md: "lg" }}
+                                                fontWeight="900"
+                                                textTransform="uppercase"
+                                            >
+                                                <LinkOverlay
+                                                    href={item.link}
+                                                    target={isPdf ? "_blank" : undefined}
+                                                    rel={isPdf ? "noreferrer" : undefined}
+                                                    download={isDoc ? true : undefined}
+                                                >
+                                                    {item.title}
+                                                </LinkOverlay>
+                                            </Heading>
 
-                      {item.description ? (
-                        <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
-                          {item.description}
-                        </Text>
-                      ) : null}
-                    </Box>
+                                            {item.description ? (
+                                                <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
+                                                    {item.description}
+                                                </Text>
+                                            ) : null}
+                                        </Box>
 
-                    <Box
-                      w="48px"
-                      h="48px"
-                      rounded="xl"
-                      borderWidth="1px"
-                      borderColor="gray.200"
-                      display="grid"
-                      placeItems="center"
-                      _groupHover={{ borderColor: "yellow.400" }}
-                    >
-                      <Icon as={DownloadIcon} boxSize={6} />
-                    </Box>
-                  </Flex>
-                </LinkBox>
-              </MotionInView>
-            );
-          })}
-        </Stack>
-      </Container>
-    </Box>
-  );
+                                        <Box
+                                            w="48px"
+                                            h="48px"
+                                            rounded="xl"
+                                            borderWidth="1px"
+                                            borderColor="gray.200"
+                                            display="grid"
+                                            placeItems="center"
+                                            _groupHover={{ borderColor: "yellow.400" }}
+                                        >
+                                            <Icon as={DownloadIcon} boxSize={6} />
+                                        </Box>
+                                    </Flex>
+                                </LinkBox>
+                            </MotionInView>
+                        );
+                    })}
+                </Stack>
+            </Container>
+        </Box>
+    );
 }
 
 
 const Formanyomtatvanyok = () => {
 
-    const otthonDocs  = [
+    const otthonDocs = [
         {
             title: "Kérelem",
             description:
@@ -133,7 +133,7 @@ const Formanyomtatvanyok = () => {
         },
     ];
 
-        const nappaliDocs  = [
+    const nappaliDocs = [
         {
             title: "Kérelem a fogyatékos személyek nappali ellátása",
             description:
@@ -155,6 +155,11 @@ const Formanyomtatvanyok = () => {
             title: "Megállapodás",
             description: "Támogató szolgálat.",
             link: "/images/dokumentum/nappali/megallapodastamogatoszolgalat.docx",
+        },
+        {
+            title: "Megállapodás",
+            description: "Idős (ezen belül demens személyek) nappali ellátása.",
+            link: "/images/dokumentum/nappali/idosmegallapodas.docx",
         },
     ];
 
@@ -221,19 +226,19 @@ const Formanyomtatvanyok = () => {
 
 
             {/* DOKUMENTUM LISTA */}
-          <DocumentGroup
-  title="IDŐSOTTHON – DOKUMENTUMOK"
-  subtitle="A bentlakásos ellátás igényléséhez szükséges nyomtatványok."
-  items={otthonDocs}
-/>
+            <DocumentGroup
+                title="IDŐSOTTHON – DOKUMENTUMOK"
+                subtitle="A bentlakásos ellátás igényléséhez szükséges nyomtatványok."
+                items={otthonDocs}
+            />
 
-<Box h="1px" bg="gray.200" /> {/* opcionális elválasztó */}
+            <Box h="1px" bg="gray.200" /> {/* opcionális elválasztó */}
 
-<DocumentGroup
-  title="NAPPALI ELLÁTÁS – DOKUMENTUMOK"
-  subtitle="A nappali ellátások igényléséhez szükséges nyomtatványok."
-  items={nappaliDocs}
-/>
+            <DocumentGroup
+                title="NAPPALI ELLÁTÁS – DOKUMENTUMOK"
+                subtitle="A nappali ellátások igényléséhez szükséges nyomtatványok."
+                items={nappaliDocs}
+            />
 
         </Box>
     );
