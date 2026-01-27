@@ -4,7 +4,6 @@ import contactRoutes from "./routes/contactRoutes.js";
 
 const app = express();
 
-// ✅ CORS: csak a frontend origin legyen engedélyezve
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -13,8 +12,7 @@ app.use(
   })
 );
 
-// ✅ Preflight (OPTIONS) kezelése
-app.options("*", cors());
+app.use(cors());
 
 app.use(express.json());
 
