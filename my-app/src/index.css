@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+.mainheader{
+  background-image: linear-gradient(100deg, var(--e-global-color-astglobalcolor0) 0%, #FFFFFF 90%);
+}
+
+/* Általános beállítások az egész oldalra */
+::selection {
+  background-color: black; /* Kijelölés háttérszíne */
+  color: white;            /* Kijelölt szöveg színe */
+}
+
+/* Csak egy adott elemre alkalmazva */
+.some-class::selection {
+  background-color: black;
+  color: white;
+}
+
+
+.curved-text {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: bottom left;
+  font-size: 28px;
+  color: white;
+  margin-bottom: -2px;
+}
+
+.curved-text::after {
+  content: 'BÁSTYA';
+  display: block;
+  transform: rotate(25deg);
+  transform-origin: bottom right;
+}
+
+.appp{
+  font-family: 'Roboto';
+}
+
+@media (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+._3WRGR {
+  fill: rgb(236, 201, 75)!important;  /* Az SVG ikonok színe */
+  width: 80px!important;  /* Az ikon szélessége */
+  height: 80px!important; /* Az ikon magassága */
+  position: relative;
+  right: 15px;
+  top: 15px;
+}
+
+.carousel-custom .gallery-carousel__left-icon, 
+.carousel-custom .gallery-carousel__right-icon {
+  background-color: transparent; /* Az ikon mögötti háttér színének eltüntetése */
+  border-radius: 50%;  /* Az ikonok lekerekítése */
+}
+
+.carousel-custom .gallery-carousel__button {
+  background-color: rgba(0, 0, 0, 0.7); /* Gomb háttér színének módosítása */
+  border-radius: 50%;
+}
+
+.__JnHV{
+background-color: rgb(236, 201, 75)!important;
+}
+

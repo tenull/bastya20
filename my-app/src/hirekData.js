@@ -1,0 +1,42 @@
+export const hirekData = [
+    {
+     id: "1",
+    "date":"24.05.2025",
+    "header": 'Felújítási folyamatok',
+    "description": "",
+    "image":"../images/idosotthon3.jpg",
+    "image2":"/",
+},
+{
+    id: "2",
+    "date":"27.05.2025",
+    "header": 'Felújítási folyamatok',
+    "description": "",
+    "image":"../images/idosotthon3.jpg",
+    "image2":"/",
+},
+{
+    id: "3",
+    "date":"24.06.2025",
+    "header": 'Felújítási folyamatok',
+    "description": "1788. június 3-án tette le a templomépítő főkurátor, Bónis László                        férfi és női atyafiainak jelenlétében az új templom alapkövét a",
+    "image":"../images/idosotthon3.jpg",
+    "image2":"../images/idosotthon4.jpg",
+},
+{
+    id: "4",
+    "date":"15.07.2025",
+    "header": 'Felújítási folyamatok',
+    "description": "",
+    "image":"../images/idosotthon3.jpg",
+    "image2":"/",
+},
+{
+    id: "5",
+    "date":"24.07.2025",
+    "header": 'Felújítási folyamatok',
+    "description": "",
+    "image":"../images/idosotthon3.jpg",
+    "image2":"/",
+},
+]
