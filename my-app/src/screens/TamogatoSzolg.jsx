@@ -83,7 +83,7 @@ const TamogatoSzolg = () => {
         </Breadcrumb>
       </Container>
 
-      <Box py={{ base: 10, md: 14 }} bg="gray.50">
+      <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'>
         <Container maxW="container.xl">
           {/* LEAD */}
           <MotionInView y={10}>

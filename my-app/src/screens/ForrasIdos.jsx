@@ -147,7 +147,7 @@ const ForrasIdos = () => {
 
       {/* FORRÁS IDŐSOTTHON – BEMUTATÁS */}
       <Box py={{ base: 10, md: 14 }} bg="gray.50">
-        <Container maxW="container.xl">
+        <Container maxW="container.xl" textAlign='justify'>
           <Box
             bg="white"
             borderWidth="1px"
