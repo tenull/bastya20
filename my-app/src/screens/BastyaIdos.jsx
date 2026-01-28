@@ -20,28 +20,28 @@ import { DownloadIcon } from "@chakra-ui/icons";
 
 const relatedDocs = [
   {
-            title: "Kérelem",
-            description:
-                "Az idősek otthona, mint személyes gondozást nyújtó szociális ellátás igénybevételéhez.",
-            link: "/images/dokumentum/kerelem.pdf",
-        },
-        {
-            title: "Egészségi állapotra vonatkozó igazolás",
-            description:
-                "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
-            link: "/images/dokumentum/egeszsegi_igazolas.pdf",
-        },
-        {
-            title: "Értékelő adatlap",
-            description: "",
-            link: "/images/dokumentum/ertekelo_adatlap.pdf",
-        },
-        {
-            title: "Megállapodás",
-            description:
-                "A megállapodás a Magyarországi Református Egyház szeretetszolgálati küldetésének szellemében kerül megkötésre.",
-            link: "/images/dokumentum/megallapodas.docx",
-        },
+    title: "Kérelem",
+    description:
+      "Az idősek otthona, mint személyes gondozást nyújtó szociális ellátás igénybevételéhez.",
+    link: "/images/dokumentum/kerelem.pdf",
+  },
+  {
+    title: "Egészségi állapotra vonatkozó igazolás",
+    description:
+      "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
+  },
+  {
+    title: "Értékelő adatlap",
+    description: "",
+    link: "/images/dokumentum/ertekelo_adatlap.pdf",
+  },
+  {
+    title: "Megállapodás",
+    description:
+      "A megállapodás a Magyarországi Református Egyház szeretetszolgálati küldetésének szellemében kerül megkötésre.",
+    link: "/images/dokumentum/megallapodas.docx",
+  },
 ];
 
 const BastyaIdos = () => {
@@ -91,9 +91,11 @@ const BastyaIdos = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-
+          <BreadcrumbItem>
+            <ReactLink to="/szakositott">Szakosított ellátás</ReactLink>
+          </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
-            <Text>BÁSTYA IDŐSOTTHON</Text>
+            <Text>Bástya idősotthon</Text>
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
@@ -148,7 +150,7 @@ const BastyaIdos = () => {
         </Container>
       </Box>
       {/* BÁSTYA IDŐSOTTHON – BEMUTATÁS */}
-      <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'> 
+      <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'>
         <Container maxW="container.xl">
           <Box
             bg="white"
@@ -261,81 +263,81 @@ const BastyaIdos = () => {
                   programok.
                 </Text>
               </Box>
-           
+
             </Stack>
           </Box>
-             <MotionInView y={10}>
-                <Box
-                  mt={8}
-                  bg="white"
-                  rounded="2xl"
-                  borderWidth="1px"
-                  borderColor="gray.200"
-                  p={6}
-                  boxShadow="sm"
-                >
-                  <Heading fontSize="lg" fontWeight="900" mb={3}>
-                    Kapcsolódó dokumentumok
-                  </Heading>
+          <MotionInView y={10}>
+            <Box
+              mt={8}
+              bg="white"
+              rounded="2xl"
+              borderWidth="1px"
+              borderColor="gray.200"
+              p={6}
+              boxShadow="sm"
+            >
+              <Heading fontSize="lg" fontWeight="900" mb={3}>
+                Kapcsolódó dokumentumok
+              </Heading>
 
-                  <Stack spacing={4} mt={4}>
-                    {relatedDocs.map((doc, index) => {
-                      const isPdf = doc.link.toLowerCase().endsWith(".pdf");
-                      const isDoc =
-                        doc.link.toLowerCase().endsWith(".doc") ||
-                        doc.link.toLowerCase().endsWith(".docx");
+              <Stack spacing={4} mt={4}>
+                {relatedDocs.map((doc, index) => {
+                  const isPdf = doc.link.toLowerCase().endsWith(".pdf");
+                  const isDoc =
+                    doc.link.toLowerCase().endsWith(".doc") ||
+                    doc.link.toLowerCase().endsWith(".docx");
 
-                      return (
-                        <LinkBox
-                          key={doc.link}
-                          as="article"
-                          role="group"
-                          bg="white"
+                  return (
+                    <LinkBox
+                      key={doc.link}
+                      as="article"
+                      role="group"
+                      bg="white"
+                      borderWidth="1px"
+                      borderColor="gray.200"
+                      rounded="xl"
+                      p={{ base: 4, md: 5 }}
+                      _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
+                      transition="all 0.2s ease"
+                    >
+                      <Flex align="center" gap={4}>
+                        <Box flex="1" minW={0}>
+                          <Heading as="h3" fontSize={{ base: "md", md: "lg" }} fontWeight="900">
+                            <LinkOverlay
+                              href={doc.link}
+                              target={isPdf ? "_blank" : undefined}
+                              rel={isPdf ? "noreferrer" : undefined}
+                              download={isDoc ? true : undefined}
+                            >
+                              {doc.title}
+                            </LinkOverlay>
+                          </Heading>
+                          {doc.description ? (
+                            <Text mt={2} color="gray.700" noOfLines={2}>
+                              {doc.description}
+                            </Text>
+                          ) : null}
+                        </Box>
+
+                        <Box
+                          w="48px"
+                          h="48px"
+                          rounded="xl"
                           borderWidth="1px"
                           borderColor="gray.200"
-                          rounded="xl"
-                          p={{ base: 4, md: 5 }}
-                          _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
-                          transition="all 0.2s ease"
+                          display="grid"
+                          placeItems="center"
+                          _groupHover={{ borderColor: "yellow.400" }}
                         >
-                          <Flex align="center" gap={4}>
-                            <Box flex="1" minW={0}>
-                              <Heading as="h3" fontSize={{ base: "md", md: "lg" }} fontWeight="900">
-                                <LinkOverlay
-                                  href={doc.link}
-                                  target={isPdf ? "_blank" : undefined}
-                                  rel={isPdf ? "noreferrer" : undefined}
-                                  download={isDoc ? true : undefined}
-                                >
-                                  {doc.title}
-                                </LinkOverlay>
-                              </Heading>
-                              {doc.description ? (
-                                <Text mt={2} color="gray.700" noOfLines={2}>
-                                  {doc.description}
-                                </Text>
-                              ) : null}
-                            </Box>
-
-                            <Box
-                              w="48px"
-                              h="48px"
-                              rounded="xl"
-                              borderWidth="1px"
-                              borderColor="gray.200"
-                              display="grid"
-                              placeItems="center"
-                              _groupHover={{ borderColor: "yellow.400" }}
-                            >
-                              <Icon as={DownloadIcon} boxSize={6} />
-                            </Box>
-                          </Flex>
-                        </LinkBox>
-                      );
-                    })}
-                  </Stack>
-                </Box>
-              </MotionInView>
+                          <Icon as={DownloadIcon} boxSize={6} />
+                        </Box>
+                      </Flex>
+                    </LinkBox>
+                  );
+                })}
+              </Stack>
+            </Box>
+          </MotionInView>
         </Container>
       </Box>
 

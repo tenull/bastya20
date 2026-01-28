@@ -114,7 +114,6 @@ export default function Galeria() {
 
   return (
     <Box>
-      {/* HERO */}
       <Box
         w="full"
         h={heroHeight}
@@ -177,8 +176,6 @@ export default function Galeria() {
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
-
-      {/* PROGRAMOK */}
       <AlbumGridSection
         title="PROGRAMOK"
         subtitle={null}
@@ -186,9 +183,6 @@ export default function Galeria() {
         onOpenAlbum={openAlbum}
         bg="white"
       />
-
-
-      {/* FOGLALKOZÁSOK */}
       <AlbumGridSection
         title="FOGLALKOZÁSOK"
         subtitle={null}
@@ -196,8 +190,6 @@ export default function Galeria() {
         onOpenAlbum={openAlbum}
         bg="gray.50"
       />
-
-      {/* LIGHTBOX (Modal helyett) */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
@@ -234,9 +226,6 @@ export default function Galeria() {
           ),
         }}
       />
-
-
-
     </Box>
   );
 }

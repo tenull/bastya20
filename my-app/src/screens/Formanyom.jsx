@@ -17,64 +17,64 @@ import { Link as ReactLink } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 function DocumentItem({ title, description, link }) {
-  const isPdf = link.toLowerCase().endsWith(".pdf");
-  const isDoc = link.toLowerCase().endsWith(".doc") || link.toLowerCase().endsWith(".docx");
+    const isPdf = link.toLowerCase().endsWith(".pdf");
+    const isDoc = link.toLowerCase().endsWith(".doc") || link.toLowerCase().endsWith(".docx");
 
-  return (
-    <MotionInView key={link} y={10}>
-      <LinkBox
-        as="article"
-        role="group"
-        bg="white"
-        borderWidth="1px"
-        borderColor="gray.200"
-        rounded="2xl"
-        p={{ base: 4, md: 5 }}
-        boxShadow="sm"
-        _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
-        transition="all 0.2s ease"
-      >
-        <Flex align="center" gap={4}>
-          <Box flex="1" minW={0}>
-            <Heading
-              as="h3"
-              fontSize={{ base: "md", md: "lg" }}
-              fontWeight="900"
-              textTransform="uppercase"
+    return (
+        <MotionInView key={link} y={10}>
+            <LinkBox
+                as="article"
+                role="group"
+                bg="white"
+                borderWidth="1px"
+                borderColor="gray.200"
+                rounded="2xl"
+                p={{ base: 4, md: 5 }}
+                boxShadow="sm"
+                _hover={{ boxShadow: "md", transform: "translateY(-1px)" }}
+                transition="all 0.2s ease"
             >
-              <LinkOverlay
-                href={link}
-                target={isPdf ? "_blank" : undefined}
-                rel={isPdf ? "noreferrer" : undefined}
-                download={isDoc ? true : undefined}
-              >
-                {title}
-              </LinkOverlay>
-            </Heading>
+                <Flex align="center" gap={4}>
+                    <Box flex="1" minW={0}>
+                        <Heading
+                            as="h3"
+                            fontSize={{ base: "md", md: "lg" }}
+                            fontWeight="900"
+                            textTransform="uppercase"
+                        >
+                            <LinkOverlay
+                                href={link}
+                                target={isPdf ? "_blank" : undefined}
+                                rel={isPdf ? "noreferrer" : undefined}
+                                download={isDoc ? true : undefined}
+                            >
+                                {title}
+                            </LinkOverlay>
+                        </Heading>
 
-            {description ? (
-              <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
-                {description}
-              </Text>
-            ) : null}
-          </Box>
+                        {description ? (
+                            <Text mt={2} fontSize="md" color="gray.700" noOfLines={2}>
+                                {description}
+                            </Text>
+                        ) : null}
+                    </Box>
 
-          <Box
-            w="48px"
-            h="48px"
-            rounded="xl"
-            borderWidth="1px"
-            borderColor="gray.200"
-            display="grid"
-            placeItems="center"
-            _groupHover={{ borderColor: "yellow.400" }}
-          >
-            <Icon as={DownloadIcon} boxSize={6} />
-          </Box>
-        </Flex>
-      </LinkBox>
-    </MotionInView>
-  );
+                    <Box
+                        w="48px"
+                        h="48px"
+                        rounded="xl"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                        display="grid"
+                        placeItems="center"
+                        _groupHover={{ borderColor: "yellow.400" }}
+                    >
+                        <Icon as={DownloadIcon} boxSize={6} />
+                    </Box>
+                </Flex>
+            </LinkBox>
+        </MotionInView>
+    );
 }
 
 
@@ -96,8 +96,6 @@ function DocumentGroup({ title, subtitle, items, children }) {
                         ) : null}
                     </Stack>
                 </MotionInView>
-
-                {/* ✅ Ha van children, azt rendereljük, különben items listát */}
                 {children ? (
                     <Box mt={8}>{children}</Box>
                 ) : (
@@ -115,7 +113,7 @@ function DocumentGroup({ title, subtitle, items, children }) {
 
 const Formanyomtatvanyok = () => {
 
-    
+
 
     const otthonDocs = [
         {
@@ -250,11 +248,8 @@ const Formanyomtatvanyok = () => {
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Container>
-
-
-            {/* DOKUMENTUM LISTA */}
             <DocumentGroup
-                title="IDŐSOTTHON – DOKUMENTUMOK"
+                title="FORRÁS- ÉS BÁSTYA IDŐSOTTHON – DOKUMENTUMOK"
                 subtitle="A bentlakásos ellátás igényléséhez szükséges nyomtatványok."
                 items={otthonDocs}
             />

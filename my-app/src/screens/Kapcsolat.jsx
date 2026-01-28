@@ -63,11 +63,7 @@ const Kapcsolat = () => {
 
     const handeSubmit = async (e) => {
         e.preventDefault();
-
-        // ha már küldés folyamatban van, ne küldje újra
         if (isSubmitting) return;
-
-        // opcionális: reseteld a régi státuszokat
         setSubmitFailed(false);
         setSubmitSuccessful(false);
 
@@ -94,7 +90,6 @@ const Kapcsolat = () => {
             });
 
             if (!res.ok) {
-                // ha backend küld hibát, próbáljuk kiolvasni
                 let errText = "Az üzenetet nem tudtuk elküldeni.";
                 try {
                     const data = await res.json();
@@ -121,7 +116,6 @@ const Kapcsolat = () => {
             setPhone("");
             setEmail("");
             setMessage("");
-
             // toast({
             //     title: "Sikeres küldés",
             //     description: "Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.",
@@ -165,14 +159,13 @@ const Kapcsolat = () => {
         { role: "Szakmai vezető", names: ["Kiss Attila"] },
         { role: "Vezető ápoló", names: ["Kola Mónika"] },
         { role: "Részlegvezető ápoló", names: ["Tóth Henrietta Mónika"] },
-         { role: "Részlegvezető ápoló", names: ["Ónodi Anita"] },
+        { role: "Részlegvezető ápoló", names: ["Ónodi Anita"] },
         { role: "Vezető gondozónő", names: ["Petróné Szabó Gabriella"] },
         { role: "Vezető gondozónő", names: ["Kiss Krisztina"] },
     ];
 
     return (
         <Box>
-            {/* HERO */}
             <Box
                 w="full"
                 h={{ base: "450px", md: "550px" }}
@@ -189,36 +182,36 @@ const Kapcsolat = () => {
                     justifyContent="center"
                     alignItems="center"
                     textAlign="center"
-    
+
                 >
                     <Box
-                    p={10}
-                    borderRadius='15'
-                    backgroundColor='black'
-                    opacity='0.6'
+                        p={10}
+                        borderRadius='15'
+                        backgroundColor='black'
+                        opacity='0.6'
                     //backgroundImage={`linear-gradient(100deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.10) 85%),`}
                     >
-                    <MotionInView y={12}>
-                        <Heading 
-                         color="white" fontWeight="900" fontSize={{ base: "4xl", md: "6xl" }}>
-                            KAPCSOLAT
-                        </Heading>
-                    </MotionInView>
+                        <MotionInView y={12}>
+                            <Heading
+                                color="white" fontWeight="900" fontSize={{ base: "4xl", md: "6xl" }}>
+                                KAPCSOLAT
+                            </Heading>
+                        </MotionInView>
 
-                    <MotionInView y={12} delay={0.06}>
-                        <Text fontSize={{ base: "sm", md: "lg" }} mb={5} color="whiteAlpha.900">
-                            Szolgáltatásokkal, elhelyezéssel kapcsolatban felmerülő
-                            kérdésekre az alábbi elérhetőségeken válaszolunk!
-                            <br />
-                            <Link
-                                href="tel:+36301449427"
-                                _hover={{ textDecoration: "none", color: "yellow.400" }}
-                                color="white"
-                            >
-                                +36/30-144-9427
-                            </Link>
-                        </Text>
-                    </MotionInView></Box>
+                        <MotionInView y={12} delay={0.06}>
+                            <Text fontSize={{ base: "sm", md: "lg" }} mb={5} color="whiteAlpha.900">
+                                Szolgáltatásokkal, elhelyezéssel kapcsolatban felmerülő
+                                kérdésekre az alábbi elérhetőségeken válaszolunk!
+                                <br />
+                                <Link
+                                    href="tel:+36301449427"
+                                    _hover={{ textDecoration: "none", color: "yellow.400" }}
+                                    color="white"
+                                >
+                                    +36/30-144-9427
+                                </Link>
+                            </Text>
+                        </MotionInView></Box>
                 </Container>
             </Box>
             <Container maxW="container.xl">
@@ -241,12 +234,9 @@ const Kapcsolat = () => {
 
             <Box py={{ base: 8, md: 12 }}>
                 <Container maxW="container.xl">
-                    {/* Személyek */}
                     <StaffCarousel staff={staff} title="VEZETŐSÉG" />
-                    
-                    {/* Info + Form */}
                     <Flex
-                    py={{ base: 8, md: 12 }}
+                        py={{ base: 8, md: 12 }}
                         gap={{ base: 8, md: 10 }}
                         wrap="wrap"
                         justify="space-between"
@@ -254,6 +244,7 @@ const Kapcsolat = () => {
                     >
                         <MotionInView x={-18} y={10}>
                             <VStack align="start" spacing={3} w={{ base: "100%", md: "420px" }}>
+                                
                                 <Text fontSize="sm" color="gray.600">
                                     Otthonunk címe
                                 </Text>
@@ -265,7 +256,7 @@ const Kapcsolat = () => {
                                     Ügyfélfogadás
                                     {/* <Box w="70px" h="3px" bg="yellow.400" rounded="full" mx="auto" my={3} /> */}
                                 </Text>
-                                
+
                                 <Text fontSize="lg" display="flex" alignItems="flex-start" gap={2}>
                                     <Icon as={TimeIcon} mt="2px" />
                                     <Box>
@@ -287,7 +278,7 @@ const Kapcsolat = () => {
                                     alignItems="center"
                                     gap={2}
                                 >
-                                    <Icon as={IoIosMail } /> bastyaidosotthon@gmail.com
+                                    <Icon as={IoIosMail} /> bastyaidosotthon@gmail.com
                                 </Link>
                                 <Link
                                     href="mailto:bastya.nappali@gmail.com"
@@ -296,7 +287,7 @@ const Kapcsolat = () => {
                                     alignItems="center"
                                     gap={2}
                                 >
-                                    <Icon as={IoIosMail } /> bastya.nappali@gmail.com
+                                    <Icon as={IoIosMail} /> bastya.nappali@gmail.com
                                 </Link>
                             </VStack>
                         </MotionInView>
@@ -415,8 +406,6 @@ const Kapcsolat = () => {
                             </Box>
                         </MotionInView>
                     </Flex>
-
-                    {/* MAP (egy darab, reszponzívan) */}
                     <MotionInView y={12} delay={0.05}>
                         <Box mt={{ base: 10, md: 14 }}>
                             <Box

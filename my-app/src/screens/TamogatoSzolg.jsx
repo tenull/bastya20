@@ -76,7 +76,9 @@ const TamogatoSzolg = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-
+         <BreadcrumbItem>
+            <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
+          </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <Text>Támogató szolgáltatás</Text>
           </BreadcrumbItem>
@@ -85,7 +87,6 @@ const TamogatoSzolg = () => {
 
       <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'>
         <Container maxW="container.xl">
-          {/* LEAD */}
           <MotionInView y={10}>
             <Box
               bg="white"
@@ -111,8 +112,6 @@ const TamogatoSzolg = () => {
               </Stack>
             </Box>
           </MotionInView>
-
-          {/* KINEK / MIT TESZ LEHETŐVÉ */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
             <MotionInView y={10}>
               <Box bg="white" rounded="2xl" borderWidth="1px" borderColor="gray.200" p={6} boxShadow="sm">
@@ -140,8 +139,6 @@ const TamogatoSzolg = () => {
               </Box>
             </MotionInView>
           </SimpleGrid>
-
-          {/* AMIT NYÚJT – KIEMELT 3 */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -172,8 +169,6 @@ const TamogatoSzolg = () => {
               </SimpleGrid>
             </Box>
           </MotionInView>
-
-          {/* KIEGÉSZÍTŐ TÁMOGATÁSOK */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -201,8 +196,6 @@ const TamogatoSzolg = () => {
               </List>
             </Box>
           </MotionInView>
-
-          {/* KAPCSOLÓDÓ DOKUMENTUMOK */}
           <MotionInView y={10}>
             <Box
               mt={8}

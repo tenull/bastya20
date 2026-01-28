@@ -20,7 +20,6 @@ import { imageData } from "../imageData";
 import { foglalkozasData } from "../foglalkozasData";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 function buildSlidesFromAlbum(album) {
-    // album.images nálad objektum: { a: "url", b: "url", ... }
     const imgs = album?.images ? Object.values(album.images) : [];
     return imgs.map((src) => ({
         src,
@@ -115,7 +114,6 @@ export default function () {
 
     return (
         <Box>
-            {/* HERO */}
             <Box
                 w="full"
                 h={heroHeight}
@@ -177,8 +175,6 @@ export default function () {
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Container>
-
-            {/* PROGRAMOK */}
             <AlbumGridSection
                 title="PROGRAMOK"
                 subtitle={null}
@@ -186,9 +182,6 @@ export default function () {
                 onOpenAlbum={openAlbum}
                 bg="white"
             />
-
-
-            {/* FOGLALKOZÁSOK */}
             <AlbumGridSection
                 title="FOGLALKOZÁSOK"
                 subtitle={null}
@@ -196,8 +189,6 @@ export default function () {
                 onOpenAlbum={openAlbum}
                 bg="gray.50"
             />
-
-            {/* LIGHTBOX (Modal helyett) */}
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}

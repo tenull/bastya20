@@ -37,7 +37,6 @@ const relatedDocs = [
 const FogyatekkalElok = () => {
   return (
     <Box>
-      {/* HERO */}
       <Box
         w="full"
         h={{ base: "450px", md: "550px" }}
@@ -70,8 +69,6 @@ const FogyatekkalElok = () => {
           </Box>
         </Container>
       </Box>
-
-      {/* Breadcrumb */}
       <Container maxW="container.xl">
         <Breadcrumb
           ms={2}
@@ -83,7 +80,9 @@ const FogyatekkalElok = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-
+         <BreadcrumbItem>
+            <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
+          </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <Text>Fogyatékkal élők nappali ellátása</Text>
           </BreadcrumbItem>
@@ -92,8 +91,6 @@ const FogyatekkalElok = () => {
 
       <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'>
         <Container maxW="container.xl">
-
-          {/* LEAD */}
           <MotionInView y={10}>
             <Box
               bg="white"
@@ -119,8 +116,6 @@ const FogyatekkalElok = () => {
               </Stack>
             </Box>
           </MotionInView>
-
-          {/* KINEK SZÓL + MIT BIZTOSÍT */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
             <MotionInView y={10}>
               <Box bg="white" rounded="2xl" borderWidth="1px" borderColor="gray.200" p={6} boxShadow="sm">
@@ -158,8 +153,6 @@ const FogyatekkalElok = () => {
               </Box>
             </MotionInView>
           </SimpleGrid>
-
-          {/* CÉLUNK */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -181,8 +174,6 @@ const FogyatekkalElok = () => {
               </Text>
             </Box>
           </MotionInView>
-
-          {/* KÖZÖSSÉGI PROGRAMOK */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -204,8 +195,6 @@ const FogyatekkalElok = () => {
               </Text>
             </Box>
           </MotionInView>
-
-          {/* AMIT NYÚJT */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -245,8 +234,6 @@ const FogyatekkalElok = () => {
               </SimpleGrid>
             </Box>
           </MotionInView>
-
-          {/* JOGSZABÁLY */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -337,7 +324,6 @@ const FogyatekkalElok = () => {
               </Stack>
             </Box>
           </MotionInView>
-
         </Container>
       </Box>
     </Box>

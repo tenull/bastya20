@@ -5,15 +5,36 @@ import {
   Text,
   Breadcrumb,
   BreadcrumbItem,
+  Stack,
+  SimpleGrid,
+  Button
 } from "@chakra-ui/react";
 import MotionInView from "../components/MotionView";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Link as ReactLink } from "react-router-dom";
+import { BiRightArrowAlt } from "react-icons/bi";
+
+const handleTopScroll = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const cards = [
+  {
+    title: "Bástya Idősotthon",
+    desc: "Bentlakásos ellátás, teljes körű gondozás, ápolás és közösségi élet biztonságos környezetben.",
+    to: "/szakositott/bastya-idosotthon",
+  },
+  {
+    title: "Forrás Idősotthon",
+    desc: "Nyugodt, akadálymentes környezet, személyre szabott ellátás és gondoskodás Tiszalökön.",
+    to: "/szakositott/forras-idosotthon",
+  },
+];
+
 
 const SzakositottEllatas = () => {
   return (
     <Box>
-      {/* HERO */}
       <Box
         w="full"
         h={{ base: "450px", md: "550px" }}
@@ -37,8 +58,6 @@ const SzakositottEllatas = () => {
           </MotionInView>
         </Container>
       </Box>
-
-      {/* Breadcrumb */}
       <Container maxW="container.xl">
         <Breadcrumb
           ms={2}
@@ -49,33 +68,88 @@ const SzakositottEllatas = () => {
         >
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
-          </BreadcrumbItem>
-
+          </BreadcrumbItem>          
           <BreadcrumbItem isCurrentPage>
             <Text>Szakosított Ellátás</Text>
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
 
-      {/* Tartalom placeholder */}
-      <Box py={{ base: 10, md: 14 }}>
+      <Box py={{ base: 10, md: 14 }} bg="gray.50">
         <Container maxW="container.xl">
-          <Box
-            bg="white"
-            borderWidth="1px"
-            borderColor="gray.200"
-            rounded="2xl"
-            p={{ base: 6, md: 10 }}
-            boxShadow="sm"
-            textAlign="center"
-          >
-            <Heading fontSize={{ base: "xl", md: "2xl" }} fontWeight="900">
-              Tartalom feltöltés alatt
-            </Heading>
-            <Text mt={3} color="gray.700">
-              Dolgozunk rajta — hamarosan elérhető lesz a Szakosított ellátás bemutatása.
-            </Text>
-          </Box>
+          <Stack spacing={4} textAlign="center" align="center" mb={{ base: 8, md: 10 }}>
+            <MotionInView y={10}>
+              <Heading fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
+                Szakosított ellátások
+              </Heading>
+            </MotionInView>
+
+            <Box w="90px" h="4px" bg="yellow.400" rounded="full" />
+
+            <MotionInView y={10} delay={0.05}>
+              <Text maxW="75ch" color="gray.700" lineHeight="1.8" fontSize={{ base: "md", md: "lg" }}>
+                Szakosított ellátásaink azok számára nyújtanak teljes körű, bentlakásos gondoskodást,
+                akik egészségi állapotuk vagy élethelyzetük miatt már nem képesek önálló életvitelre.
+                Ismerje meg idősotthonainkat:
+              </Text>
+            </MotionInView>
+          </Stack>
+
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+            {cards.map((c, i) => (
+              <MotionInView key={c.to} delay={i * 0.06} y={12}>
+                <Box
+                  bg="white"
+                  borderWidth="1px"
+                  borderColor="gray.200"
+                  rounded="2xl"
+                  p={{ base: 6, md: 8 }}
+                  boxShadow="sm"
+                  transition="all 0.2s ease"
+                  _hover={{
+                    borderColor: "yellow.400",
+                    boxShadow: "md",
+                    transform: "translateY(-2px)",
+                  }}
+                  h="100%"
+                >
+                  <Stack spacing={4} h="100%" justify="space-between">
+                    <Box>
+                      <Heading fontSize="xl" fontWeight="900">
+                        {c.title}
+                      </Heading>
+                      <Text mt={2} color="gray.700" lineHeight="1.7">
+                        {c.desc}
+                      </Text>
+                    </Box>
+
+                    <Button
+                      as={ReactLink}
+                      to={c.to}
+                      variant="outline"
+                      borderColor="yellow.400"
+                      color="black"
+                      fontWeight="900"
+                      rightIcon={<BiRightArrowAlt />}
+                      sx={{
+                        ".chakra-button__icon": {
+                          transition: "transform 0.3s ease-in-out",
+                        },
+                        "&:hover .chakra-button__icon": {
+                          transform: "translateX(6px)",
+                        },
+                      }}
+                      _hover={{ bg: "yellow.50" }}
+                      alignSelf="flex-start"
+                      onClick={handleTopScroll}
+                    >
+                      Részletek
+                    </Button>
+                  </Stack>
+                </Box>
+              </MotionInView>
+            ))}
+          </SimpleGrid>
         </Container>
       </Box>
     </Box>

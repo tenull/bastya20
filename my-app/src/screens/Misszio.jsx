@@ -16,7 +16,7 @@ const Misszio = () => {
     return (
         <Box>
             <Box
-            
+
                 w="full"
                 h={{ base: "450px", md: "550px" }}
                 bgPos="center"
@@ -76,7 +76,6 @@ const Misszio = () => {
                         p={{ base: 6, md: 10 }}
                         boxShadow="sm"
                     >
-                        {/* CÍM + LEAD */}
                         <Stack spacing={4} textAlign="center" align="center" mb={{ base: 8, md: 10 }}>
                             <Heading fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
                                 Bástya Református Szociális Szolgáltató Központ
@@ -96,8 +95,6 @@ const Misszio = () => {
                                 fakasszuk fel a reménység, a méltóság és a szeretet élő vizét.
                             </Text>
                         </Stack>
-
-                        {/* 2 PILLÉR */}
                         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mb={{ base: 8, md: 10 }}>
                             <Box
                                 bg="gray.50"
@@ -131,8 +128,6 @@ const Misszio = () => {
                                 </Text>
                             </Box>
                         </SimpleGrid>
-
-                        {/* FŐ SZÖVEG – TAGOLVA */}
                         <Stack spacing={5} maxW="85ch" mx="auto" color="gray.800" lineHeight="1.9" fontSize={{ base: "md", md: "lg" }}>
                             <Text textAlign='justify'>
                                 A <b>Bástya Református Szociális Szolgáltató Központ</b>  missziója, hogy a református egyház
@@ -163,8 +158,6 @@ const Misszio = () => {
                                 </Box>
                             </Text>
                         </Stack>
-
-                        {/* IDÉZET BLOKK */}
                         <Box
                             mt={{ base: 10, md: 12 }}
                             bg="gray.900"

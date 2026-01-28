@@ -13,7 +13,6 @@ import { Link as ReactLink } from "react-router-dom";
 const Szolgaltatasaink = () => {
     return (
         <Box>
-            {/* HERO */}
             <Box
                 w="full"
                 h={{ base: "450px", md: "550px" }}
@@ -49,8 +48,6 @@ const Szolgaltatasaink = () => {
                     </Box>
                 </Container>
             </Box>
-
-            {/* Breadcrumb */}
             <Container maxW="container.xl">
                 <Breadcrumb
                     ms={2}
@@ -68,8 +65,6 @@ const Szolgaltatasaink = () => {
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Container>
-
-            {/* Tartalom placeholder */}
             <Box py={{ base: 10, md: 14 }}>
                 <Container maxW="container.xl">
                     <Box

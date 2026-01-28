@@ -69,8 +69,6 @@ const DemensNappali = () => {
           </Box>
         </Container>
       </Box>
-
-      {/* Breadcrumb */}
       <Container maxW="container.xl">
         <Breadcrumb
           ms={2}
@@ -82,7 +80,9 @@ const DemensNappali = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-
+          <BreadcrumbItem>
+            <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
+          </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <Text>Demens Idősek Nappali Ellátása</Text>
           </BreadcrumbItem>
@@ -91,7 +91,6 @@ const DemensNappali = () => {
 
       <Box py={{ base: 10, md: 14 }} bg="gray.50" textAlign='justify'>
         <Container maxW="container.xl">
-          {/* LEAD */}
           <MotionInView y={10}>
             <Box
               bg="white"
@@ -116,8 +115,6 @@ const DemensNappali = () => {
               </Stack>
             </Box>
           </MotionInView>
-
-          {/* KINEK AJÁNLOTT + CÉLUNK */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
             <MotionInView y={10}>
               <Box bg="white" rounded="2xl" borderWidth="1px" borderColor="gray.200" p={6} boxShadow="sm">
@@ -147,8 +144,6 @@ const DemensNappali = () => {
               </Box>
             </MotionInView>
           </SimpleGrid>
-
-          {/* NAPI TEVÉKENYSÉGEK */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -181,8 +176,6 @@ const DemensNappali = () => {
               </SimpleGrid>
             </Box>
           </MotionInView>
-
-          {/* AMIT NYÚJT */}
           <MotionInView y={10}>
             <Box
               mt={8}
@@ -222,8 +215,6 @@ const DemensNappali = () => {
               </SimpleGrid>
             </Box>
           </MotionInView>
-
-          {/* JOGOSULTSÁG / SZAKVÉLEMÉNY */}
           <MotionInView y={10}>
             <Box
               mt={8}

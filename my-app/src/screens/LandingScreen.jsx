@@ -9,13 +9,13 @@ export default function LandingScreen() {
         <Container maxW="container.xl">
         <HirekList />
         </Container>
-      </Box> */}    
-   <WhyDifferent/>
-    <HomeServices />
-    {/* <SzolgSection />
+      </Box> */}
+      <WhyDifferent />
+      <HomeServices />
+      {/* <SzolgSection />
       <AboutSection /> */}
 
-     
+
     </>
   );
 }
