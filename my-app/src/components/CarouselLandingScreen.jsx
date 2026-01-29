@@ -19,22 +19,22 @@ export default function CaptionCarousel() {
 
   const slidesToShow = useBreakpointValue({ base: 1, md: 1 });
 
-const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  autoplay: true,
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
 
-  autoplaySpeed: 6000, 
-  speed: 1200,         
+    autoplaySpeed: 6000,
+    speed: 1200,
 
-  cssEase: "ease-in-out",
-  pauseOnHover: false,
-  pauseOnFocus: false,
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    pauseOnFocus: false,
 
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   const slides = [
     // { image: "/images/kep2.jpg" },
@@ -47,7 +47,7 @@ const settings = {
     { image: "/images/carousel/6.jpg" },
     { image: "/images/carousel/7.jpg" },
     { image: "/images/carousel/8.jpg" },
-  
+
   ];
 
   const handleTopScroll = () => {
@@ -66,8 +66,6 @@ const settings = {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-
-      {/* Slider háttér */}
       <Box overflow="hidden">
         <Slider {...settings} ref={(s) => setSlider(s)}>
           {slides.map((s, idx) => (
@@ -81,123 +79,118 @@ const settings = {
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
                 backgroundSize="cover"
-                  animate={{ scale: 1.03 }}
-                transition={{ duration: 9.2, ease: "easeInOut", repeat: Infinity }}
+                animate={{ scale: 1.03 }}
+                transition={{ duration: 7.1, ease: "easeInOut", }}
                 willChange="transform"
               />
             </Box>
           ))}
         </Slider>
       </Box>
+      <Box position="absolute" inset={0} zIndex={3} display="flex" alignItems="center">
+        <Container maxW="container.xl">
+          <Stack
+            spacing={{ base: 5, md: 6 }}
+            maxW="3xl"
+            pt={{ base: 14, md: 8 }}
+            style={{
+              borderRadius: "15px",
+              padding: "22px",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)",
+            }}
+          >
+            <Text
+              fontSize={{ base: "xs", md: "sm" }}
+              color="whiteAlpha.800"
+              letterSpacing="0.14em"
+              textTransform="uppercase"
+              fontWeight="700"
+            >
+              BÁSTYA Református Szociális Szolgáltató Központ
+            </Text>
 
-      {/* Hero tartalom overlay */}
- <Box position="absolute" inset={0} zIndex={3} display="flex" alignItems="center">
-  <Container maxW="container.xl">
-    <Stack
-      spacing={{ base: 5, md: 6 }}
-      maxW="3xl"
-      pt={{ base: 14, md: 8 }}
-      style={{
-        borderRadius: "15px",
-        padding: "22px",
-        background:
-          "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)",
-      }}
-    >
-      <Text
-        fontSize={{ base: "xs", md: "sm" }}
-        color="whiteAlpha.800"
-        letterSpacing="0.14em"
-        textTransform="uppercase"
-        fontWeight="700"
-      >
-        BÁSTYA Református Szociális Szolgáltató Központ
-      </Text>
+            <Heading
+              fontSize={{ base: "2xl", md: "4xl" }}
+              fontWeight="900"
+              lineHeight="1.1"
+              color="white"
+            >
+              Biztonság, gondoskodás, emberközeli ellátás{" "}
+              <Box as="span" color="yellow.300">
 
-      <Heading
-        fontSize={{ base: "2xl", md: "4xl" }}
-        fontWeight="900"
-        lineHeight="1.1"
-        color="white"
-      >
-        Biztonság, gondoskodás, emberközeli ellátás{" "}
-        <Box as="span" color="yellow.300">
-         
-        egy rendszerben
-        </Box>
-        .
-      </Heading>
+                egy rendszerben
+              </Box>
+              .
+            </Heading>
 
-      <Text
-        fontSize={{ base: "sm", md: "md" }}
-        color="whiteAlpha.900"
-        lineHeight="1.7"
-        maxW="2xl"
-      >
-        Alap- és szakosított ellátásainkkal segítünk megtalálni azt a
-        szolgáltatást, amely leginkább megfelel leendő hozzánktartozóink
-        igényeinek.
-      </Text>
+            <Text
+              fontSize={{ base: "sm", md: "md" }}
+              color="whiteAlpha.900"
+              lineHeight="1.7"
+              maxW="2xl"
+            >
+              Alap- és szakosított ellátásainkkal segítünk megtalálni azt a
+              szolgáltatást, amely leginkább megfelel leendő hozzánktartozóink
+              igényeinek.
+            </Text>
 
-      <HStack spacing={3} flexWrap="wrap">
-        <Button
-          as={RouterLink}
-          to="/kapcsolat"
-          bg="yellow.400"
-          color="black"
-          _hover={{ bg: "yellow.500" }}
-          size="md"
-          fontWeight="900"
-          onClick={handleTopScroll}
-        >
-          Kapcsolatfelvétel
-        </Button>
+            <HStack spacing={3} flexWrap="wrap">
+              <Button
+                as={RouterLink}
+                to="/kapcsolat"
+                bg="yellow.400"
+                color="black"
+                _hover={{ bg: "yellow.500" }}
+                size="md"
+                fontWeight="900"
+                onClick={handleTopScroll}
+              >
+                Kapcsolatfelvétel
+              </Button>
 
-        <Button
-          as={RouterLink}
-          to="/alapszolgaltatas"
-          variant="outline"
-          borderColor="whiteAlpha.500"
-          color="white"
-          _hover={{ borderColor: "yellow.400", color: "yellow.300" }}
-          size="md"
-          fontWeight="800"
-          onClick={handleTopScroll}
-        >
-          Alapszolgáltatás
-        </Button>
+              <Button
+                as={RouterLink}
+                to="/alapszolgaltatas"
+                variant="outline"
+                borderColor="whiteAlpha.500"
+                color="white"
+                _hover={{ borderColor: "yellow.400", color: "yellow.300" }}
+                size="md"
+                fontWeight="800"
+                onClick={handleTopScroll}
+              >
+                Alapszolgáltatás
+              </Button>
 
-        <Button
-          as={RouterLink}
-          to="/szakositott"
-          variant="ghost"
-          color="whiteAlpha.900"
-          _hover={{ color: "yellow.300", bg: "whiteAlpha.100" }}
-          size="md"
-          fontWeight="800"
-          onClick={handleTopScroll}
-        >
-          Szakosított ellátás
-        </Button>
-      </HStack>
+              <Button
+                as={RouterLink}
+                to="/szakositott"
+                variant="ghost"
+                color="whiteAlpha.900"
+                _hover={{ color: "yellow.300", bg: "whiteAlpha.100" }}
+                size="md"
+                fontWeight="800"
+                onClick={handleTopScroll}
+              >
+                Szakosított ellátás
+              </Button>
+            </HStack>
 
-      <Text color="whiteAlpha.700" fontSize="xs">
-        Telefon:{" "}
-        <Box
-          as="a"
-          href="tel:+36301449427"
-          color="yellow.300"
-          fontWeight="900"
-        >
-          +36/30-144-9427
-        </Box>
-      </Text>
-    </Stack>
-  </Container>
-</Box>
-
-
-      {/* Wave maradhat */}
+            <Text color="whiteAlpha.700" fontSize="xs">
+              Telefon:{" "}
+              <Box
+                as="a"
+                href="tel:+36301449427"
+                color="yellow.300"
+                fontWeight="900"
+              >
+                +36/30-144-9427
+              </Box>
+            </Text>
+          </Stack>
+        </Container>
+      </Box>
       <Box position="absolute" bottom={-1} width="100%" height="auto" zIndex={2}>
         <svg
           style={{ transform: "rotate(0deg)", transition: "0.3s", pointerEvents: "none" }}
