@@ -24,7 +24,7 @@ function GoogleMapOption() {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: 'AIzaSyDNcItqWtFb_GcDCK6JHdBFMPRqoYUz_QA',
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY,
     libraries: ["marker"], 
   });
 
