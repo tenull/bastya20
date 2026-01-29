@@ -23,6 +23,7 @@ import MotionInView from "../components/MotionView";
 import { Link as ReactLink } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import StaffCarousel from "../components/StaffCarousel";
+import { Marker } from "@react-google-maps/api";
 
 const Kapcsolat = () => {
     const [email, setEmail] = useState("");
@@ -83,7 +84,7 @@ const Kapcsolat = () => {
         setIsSubmitting(true);
 
         try {
-            const res = await fetch("http://localhost:8000/api/contact", {
+            const res = await fetch("https://www.refbastya.hu/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ firstName, lastName, email, phone, message }),
@@ -146,12 +147,31 @@ const Kapcsolat = () => {
     };
 
 
-    const center = { lat: 48.02184, lng: 21.38115 };
+    const locations = [
+        {
+            title: "Bástya Idősek Otthona",
+            address: "4450 Tiszalök, Hősök tere 7/a",
+            position: { lat: 48.0217987, lng: 21.3795757 },
+        },
+        {
+            title: "Forrás Idősek Otthona",
+            address: "4450 Tiszalök, Kossuth utca 41.",
+            position: { lat: 48.0190651, lng: 21.3744545 },
+        },
+        {
+            title: "Nappali Ellátás",
+            address: "4450 Tiszalök, Damjanich utca 24.",
+            position: { lat: 48.0094679, lng: 21.3796366 },
+        },
+    ];
 
-    const { isLoaded } = useJsApiLoader({
-        id: "google-map-script",
-        googleMapsApiKey: 'AIzaSyB8ZVOSmtLY1o_dL6GAwku8uIT1JrzshuA'
-    });
+
+    const onLoad = (map) => {
+        const bounds = new window.google.maps.LatLngBounds();
+        locations.forEach((loc) => bounds.extend(loc.position));
+        map.fitBounds(bounds);
+    };
+
 
     const staff = [
         { role: "Intézményvezető", names: ["Kiss-Csáki Beatrix"] },
@@ -202,14 +222,6 @@ const Kapcsolat = () => {
                             <Text fontSize={{ base: "sm", md: "lg" }} mb={5} color="whiteAlpha.900">
                                 Szolgáltatásokkal, elhelyezéssel kapcsolatban felmerülő
                                 kérdésekre az alábbi elérhetőségeken válaszolunk!
-                                <br />
-                                <Link
-                                    href="tel:+36301449427"
-                                    _hover={{ textDecoration: "none", color: "yellow.400" }}
-                                    color="white"
-                                >
-                                    +36/30-144-9427
-                                </Link>
                             </Text>
                         </MotionInView></Box>
                 </Container>
@@ -243,52 +255,57 @@ const Kapcsolat = () => {
                         align="flex-start"
                     >
                         <MotionInView x={-18} y={10}>
-                            <VStack align="start" spacing={3} w={{ base: "100%", md: "420px" }}>
-                                
+                            <VStack align="start" spacing={6} w={{ base: "100%", md: "420px" }}>
                                 <Text fontSize="sm" color="gray.600">
-                                    Otthonunk címe
+                                    Intézményeink
                                 </Text>
-                                <Text fontSize="lg" display="flex" alignItems="center" gap={2}>
-                                    <Icon as={FaLocationDot} /> Tiszalök, 4450 Hősök tere 7/a.
-                                </Text>
+                                <Box>
+                                    <Text fontWeight="900">Bástya Idősotthon</Text>
+                                    <Text display="flex" alignItems="center" gap={2}>
+                                        <Icon as={FaLocationDot} /> 4450 Tiszalök, Hősök tere 7/a
+                                    </Text>
+                                    <Link href="tel:+36301449427" display="flex" alignItems="center" gap={2} _hover={{ color: "yellow.400" }}>
+                                        <Icon as={PhoneIcon} /> +36 30 162 8381
+                                    </Link>
+                                    <Link href="mailto:bastyaidosotthon@gmail.com" display="flex" alignItems="center" gap={2} _hover={{ color: "yellow.400" }}>
+                                        <Icon as={IoIosMail} /> bastyaidosotthon@gmail.com
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Text fontWeight="900">Forrás Idősotthon</Text>
+                                    <Text display="flex" alignItems="center" gap={2}>
+                                        <Icon as={FaLocationDot} /> 4450 Tiszalök, Kossuth utca 41.
+                                    </Text>
+                                    <Link href="tel:+36301449427" display="flex" alignItems="center" gap={2} _hover={{ color: "yellow.400" }}>
+                                        <Icon as={PhoneIcon} /> +36 30 144 9427
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Text fontWeight="900">Nappali ellátás</Text>
+                                    <Text display="flex" alignItems="center" gap={2}>
+                                        <Icon as={FaLocationDot} /> 4450 Tiszalök, Damjanich utca 24.
+                                    </Text>
+                                      <Link href="tel:+36309009539" display="flex" alignItems="center" gap={2} _hover={{ color: "yellow.400" }}>
+                                        <Icon as={PhoneIcon} /> +36 30 900 9539
+                                    </Link>
+                                    <Link href="mailto:bastya.nappali@gmail.com" display="flex" alignItems="center" gap={2} _hover={{ color: "yellow.400" }}>
+                                        <Icon as={IoIosMail} /> bastya.nappali@gmail.com
+                                    </Link>
+                                </Box>
+                                <Box w="100%" h="1px" bg="gray.200" />
+                                <Box>
+                                    <Text fontSize="sm" color="gray.600">
+                                        Ügyfélfogadás
+                                    </Text>
+                                    <Text display="flex" alignItems="flex-start" gap={2}>
+                                        <Icon as={TimeIcon} mt="2px" />
+                                        <Box>
+                                            Hétfő – Csütörtök: 9:00 – 15:00 <br />
+                                            Péntek: 9:00 – 13:30
+                                        </Box>
+                                    </Text>
+                                </Box>
 
-                                <Text fontSize="sm" color="gray.600" mt={2}>
-                                    Ügyfélfogadás
-                                    {/* <Box w="70px" h="3px" bg="yellow.400" rounded="full" mx="auto" my={3} /> */}
-                                </Text>
-
-                                <Text fontSize="lg" display="flex" alignItems="flex-start" gap={2}>
-                                    <Icon as={TimeIcon} mt="2px" />
-                                    <Box>
-                                        Hétfőtől - Csütörtökig : 9 - 15:00 óráig <br />
-                                        Péntek : 9 - 13:30 óráig
-                                    </Box>
-                                </Text>
-
-                                <Text fontSize="sm" color="gray.600" mt={2}>
-                                    Kapcsolat
-                                </Text>
-                                <Link href="tel:+36301449427" _hover={{ color: "yellow.400" }} display="flex" alignItems="center" gap={2}>
-                                    <Icon as={PhoneIcon} /> +36 30-144-9427
-                                </Link>
-                                <Link
-                                    href="mailto:bastyaidosotthon@gmail.com"
-                                    _hover={{ color: "yellow.400" }}
-                                    display="flex"
-                                    alignItems="center"
-                                    gap={2}
-                                >
-                                    <Icon as={IoIosMail} /> bastyaidosotthon@gmail.com
-                                </Link>
-                                <Link
-                                    href="mailto:bastya.nappali@gmail.com"
-                                    _hover={{ color: "yellow.400" }}
-                                    display="flex"
-                                    alignItems="center"
-                                    gap={2}
-                                >
-                                    <Icon as={IoIosMail} /> bastya.nappali@gmail.com
-                                </Link>
                             </VStack>
                         </MotionInView>
 
@@ -415,16 +432,26 @@ const Kapcsolat = () => {
                                 borderColor="gray.200"
                                 h={{ base: "360px", md: "560px" }}
                             >
-                                {isLoaded ? (
-                                    <GoogleMap
-                                        mapContainerStyle={{ width: "100%", height: "100%" }}
-                                        center={center}
-                                        zoom={17}
-                                        options={{ disableDefaultUI: true, zoomControl: true }}
-                                    />
-                                ) : (
-                                    <Box w="100%" h="100%" bg="gray.100" />
-                                )}
+
+                                <GoogleMap
+                                    mapContainerStyle={{ width: "100%", height: "100%" }}
+                                    center={locations[0].position}
+                                    zoom={16}
+                                    onLoad={onLoad}
+                                    options={{
+                                        disableDefaultUI: true,
+                                        zoomControl: true,
+                                    }}
+                                >
+                                    {locations.map((loc, i) => (
+                                        <Marker
+                                            key={i}
+                                            position={loc.position}
+                                            title={`${loc.title}\n${loc.address}`}
+                                        />
+                                    ))}
+                                </GoogleMap>
+
                             </Box>
                         </Box>
                     </MotionInView>

@@ -23,37 +23,41 @@ import GaleriaBastya from "./screens/GaleriaBastya";
 import Alapellatas from "./screens/Alapellatas";
 import SzakositottEllatas from "./screens/SzakositottEllatas";
 import Misszio from "./screens/Misszio";
+import GoogleMapsProvider from "./components/GoogleMapsProvider";
+
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Router>
-        <Header />
-        <main className="appp">
-          <Routes>
-            <Route path="/" element={<LandingScreen />} />
-            <Route path="/rolunk" element={<Rolunk />} />
-            <Route path="/hir/:id" element={<HirDetail />} />
-            <Route path="/szolgaltatasaink" element={<Szolgaltatasaink />} />
-             <Route path="/misszionk" element={<Misszio />} />
-            <Route path="/alapszolgaltatas" element={<Alapellatas />} />
-            <Route path="/szakositott" element={<SzakositottEllatas />} />
-            <Route path="/alapellatas/demens-nappali" element={<DemensNappali />} />
-            <Route path="/alapellatas/fogyatekkal-elok-nappali" element={<FogyatekkalElok />} />
-            <Route path="/alapellatas/tamogato-szolgaltatas" element={<TamogatoSzolg />} />
-            <Route path="/szakositott/bastya-idosotthon" element={<BastyaIdos />} />
-            <Route path="/szakositott/forras-idosotthon" element={<ForrasIdos />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/galeria/nappali" element={<Galeria />} />
-             <Route path="/galeria/bastya" element={<GaleriaBastya />} />
-            <Route path="/formanyomtatvanyok" element={<Formanyomtatvanyok />} />
-            <Route path="/kapcsolat" element={<Kapcsolat />} />
-          </Routes>
-        </main>
-        <Rendelkezes/>
-        <Contacts/>
-        <Footer/>
-      </Router>
+      <GoogleMapsProvider>
+        <Router>
+          <Header />
+          <main className="appp">
+            <Routes>
+              <Route path="/" element={<LandingScreen />} />
+              <Route path="/rolunk" element={<Rolunk />} />
+              <Route path="/hir/:id" element={<HirDetail />} />
+              <Route path="/szolgaltatasaink" element={<Szolgaltatasaink />} />
+              <Route path="/misszionk" element={<Misszio />} />
+              <Route path="/alapszolgaltatas" element={<Alapellatas />} />
+              <Route path="/szakositott" element={<SzakositottEllatas />} />
+              <Route path="/alapellatas/demens-nappali" element={<DemensNappali />} />
+              <Route path="/alapellatas/fogyatekkal-elok-nappali" element={<FogyatekkalElok />} />
+              <Route path="/alapellatas/tamogato-szolgaltatas" element={<TamogatoSzolg />} />
+              <Route path="/szakositott/bastya-idosotthon" element={<BastyaIdos />} />
+              <Route path="/szakositott/forras-idosotthon" element={<ForrasIdos />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/galeria/nappali" element={<Galeria />} />
+              <Route path="/galeria/bastya" element={<GaleriaBastya />} />
+              <Route path="/formanyomtatvanyok" element={<Formanyomtatvanyok />} />
+              <Route path="/kapcsolat" element={<Kapcsolat />} />
+            </Routes>
+          </main>
+          <Rendelkezes />
+          <Contacts />
+          <Footer />
+        </Router>
+      </GoogleMapsProvider>
     </ChakraProvider>
   );
 }
