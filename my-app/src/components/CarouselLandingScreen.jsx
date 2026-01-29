@@ -19,22 +19,20 @@ export default function CaptionCarousel() {
 
   const slidesToShow = useBreakpointValue({ base: 1, md: 1 });
 
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
+const settings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  speed: 900,
+  cssEase: "ease-in-out",
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
-    autoplaySpeed: 6000,
-    speed: 1200,
-
-    cssEase: "ease-in-out",
-    pauseOnHover: false,
-    pauseOnFocus: false,
-
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   const slides = [
     // { image: "/images/kep2.jpg" },
@@ -80,7 +78,7 @@ export default function CaptionCarousel() {
                 backgroundRepeat="no-repeat"
                 backgroundSize="cover"
                 animate={{ scale: 1.03 }}
-                transition={{ duration: 7.1, ease: "easeInOut", }}
+               transition={{ duration: 7.0, ease: "easeOut", repeat: Infinity }} 
                 willChange="transform"
               />
             </Box>
