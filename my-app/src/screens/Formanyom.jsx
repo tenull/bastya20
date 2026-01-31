@@ -152,6 +152,12 @@ const Formanyomtatvanyok = () => {
                     link: "/images/dokumentum/nappali/idoskerelem.docx",
                 },
                 {
+                    title: "Egészségi állapotra vonatkozó igazolás",
+                    description:
+                        "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+                    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
+                },
+                {
                     title: "Megállapodás",
                     description:
                         "Idős (ezen belül demens személyek) nappali ellátása.",
@@ -160,13 +166,19 @@ const Formanyomtatvanyok = () => {
             ],
         },
         {
-            section: "Fogyatékkal élők nappali ellátása",
+            section: "Fogyatékossággal élők nappali ellátása",
             items: [
                 {
                     title: "Kérelem",
                     description:
                         "A fogyatékos személyek nappali ellátásának igénybevételéhez.",
                     link: "/images/dokumentum/nappali/fogykerelem.docx",
+                },
+                {
+                    title: "Egészségi állapotra vonatkozó igazolás",
+                    description:
+                        "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+                    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
                 },
                 {
                     title: "Megállapodás",
@@ -180,9 +192,20 @@ const Formanyomtatvanyok = () => {
             section: "Támogató szolgáltatás",
             items: [
                 {
+                    title: "Kérelem",
+                    description: "Támogató szolgálat igénybe vételéhez.",
+                    link: "/images/dokumentum/nappali/tamogatoszolgalatkerelem .docx",
+                },
+                {
                     title: "Megállapodás",
                     description: "Támogató szolgálat.",
                     link: "/images/dokumentum/nappali/megallapodastamogatoszolgalat.docx",
+                },
+                {
+                    title: "Egészségi állapotra vonatkozó igazolás",
+                    description:
+                        "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+                    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
                 },
             ],
         },

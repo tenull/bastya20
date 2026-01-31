@@ -11,7 +11,7 @@ const cards = [
   },
   {
     title: "Nappali ellátást keresőknek",
-    desc: "Demens idősek és fogyatékkal élők nappali ellátása — támogató szolgáltatás.",
+    desc: "Demens idősek és fogyatékossággal élők nappali ellátása — támogató szolgáltatás.",
     to: "/alapellatas/demens",
     cta: "Alapellátás",
   },

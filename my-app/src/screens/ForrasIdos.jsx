@@ -10,7 +10,9 @@ import {
   SimpleGrid,
   LinkBox,
   LinkOverlay,
-  Icon
+  Icon,
+  List,
+  ListItem
 } from "@chakra-ui/react";
 import MotionInView from "../components/MotionView";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -98,13 +100,17 @@ const ForrasIdos = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
-      <Box py={{ base: 10, md: 12 }}>
+      {/* <Box py={{ base: 10, md: 12 }}>
         <Container maxW="container.lg">
-          <MotionInView variant="zoom-up">
-            <Text textAlign="center" fontWeight="900" fontSize={{ base: "2xl", md: "4xl" }}>
-              ELÉRHETŐ SZOBÁK
-            </Text>
-          </MotionInView>
+            <MotionInView variant="zoom-up">
+                     <Box display='flex' flexDirection='column' alignItems='center'>
+                       <Heading textAlign="center" fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
+                       ELÉRHETŐ SZOBÁK
+                     </Heading>
+                      <Box w="90px" h="4px" bg="yellow.400" rounded="full" /> 
+                     </Box>
+                    
+                   </MotionInView>
           <Flex
             mt={8}
             gap={6}
@@ -145,8 +151,8 @@ const ForrasIdos = () => {
             </Box>
           </Flex>
         </Container>
-      </Box>
-      <Box py={{ base: 10, md: 14 }} bg="gray.50">
+      </Box> */}
+      {/* <Box py={{ base: 10, md: 14 }} bg="gray.50">
         <Container maxW="container.xl" textAlign='justify'>
           <Box
             bg="white"
@@ -166,11 +172,12 @@ const ForrasIdos = () => {
                 Tiszalök város ikonikus, történelmi épületében.
               </Text>
             </Stack>
-            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mb={{ base: 8, md: 10 }}>
+            <SimpleGrid columns={{ base: 1, md: 4 }} spacing={4} mb={{ base: 8, md: 10 }}>
               {[
                 { k: "Férőhely", v: "25 fő" },
                 { k: "Elhelyezkedés", v: "4450, Tiszalök, Kossuth utca 41." },
                 { k: "Akadálymentesítés", v: "Rámpa, földszintes épület" },
+                { k: "Ellátási terület", v: "Országos" },
               ].map((x) => (
                 <Box
                   key={x.k}
@@ -230,9 +237,11 @@ const ForrasIdos = () => {
                   Egészségügyi háttér
                 </Heading>
                 <Text>
-                  Az intézmény jól felszerelt orvosi és nővérszobával, betegszobával, öltözővel,
-                  valamint melegítő–tálalókonyhával rendelkezik. A mozgáskorlátozottak számára
-                  megfelelő vizesblokkok is kialakításra kerültek.
+                  Intézményünk szakmailag felkészült, elhivatott munkatársakkal biztosítja az ellátást. Csapatunk tagjai szakképzett ápolók, gondozók és egészségügyi szakemberek, akik megfelelő végzettséggel és több éves tapasztalattal rendelkeznek.
+
+                  Kiemelten fontos számunkra a folyamatos szakmai fejlődés, ezért munkatársaink rendszeresen részt vesznek továbbképzéseken és szakmai programokon. Munkánk során a biztonság, a szakmaiság és az emberközpontú szemlélet áll a középpontban.
+
+                  Lakóink számára 24 órás felügyeletet és gondoskodást biztosítunk, figyelembe véve egyéni szükségleteiket és egészségi állapotukat.
                 </Text>
               </Box>
 
@@ -245,6 +254,28 @@ const ForrasIdos = () => {
                   kertészkedésre és a pihenésre, hozzájárulva az ellátottak testi-lelki jóllétéhez.
                 </Text>
               </Box>
+              <MotionInView y={10} delay={0.05}>
+                <Box bg="white" rounded="2xl" borderWidth="1px" borderColor="gray.200" p={6} boxShadow="sm">
+                  <Heading fontSize="lg" fontWeight="900" mb={3}>
+                    Idősotthon szolgáltatásai:
+                  </Heading>
+                  <List spacing={2} color="gray.700" lineHeight="1.8">
+                    <ListItem>• 24 órás felügyelet</ListItem>
+                    <ListItem>• Orvosi ellátás</ListItem>
+                    <ListItem>• Gyógyszerelés felügyelete, adagolása</ListItem>
+                    <ListItem>• Szakápolás</ListItem>
+                    <ListItem>• Demens ellátás</ListItem>
+                    <ListItem>• Személyes higiénés segítségnyújtás</ListItem>
+                    <ListItem>• Napi ötszöri étkeztetés</ListItem>
+                    <ListItem>• Mentális támogatás</ListItem>
+                    <ListItem>• Hitéleti alkalmak</ListItem>
+                    <ListItem>• Lelkigondozás</ListItem>
+                    <ListItem>• Gyógytorna</ListItem>
+                    <ListItem>• Terápiás foglalkozásokk</ListItem>
+
+                  </List>
+                </Box>
+              </MotionInView>
               <Box bg="gray.900" color="white" rounded="2xl" p={{ base: 5, md: 7 }}>
                 <Text fontWeight="900" fontSize={{ base: "md", md: "lg" }}>
                   Az idősotthoni ellátás célja
@@ -333,8 +364,27 @@ const ForrasIdos = () => {
             </Box>
           </MotionInView>
         </Container>
+      </Box> */}
+      <Box py={{ base: 10, md: 14 }}>
+        <Container maxW="container.xl">
+          <Box
+            bg="white"
+            borderWidth="1px"
+            borderColor="gray.200"
+            rounded="2xl"
+            p={{ base: 6, md: 10 }}
+            boxShadow="sm"
+            textAlign="center"
+          >
+            <Heading fontSize={{ base: "xl", md: "2xl" }} fontWeight="900">
+              Forrás idősotthon hamarosan nyit
+            </Heading>
+            <Text mt={3} color="gray.700">
+              Dolgozunk rajta — hamarosan elérhető lesz a Forrás idősotthon bemutatása.
+            </Text>
+          </Box>
+        </Container>
       </Box>
-
     </Box>
   );
 };

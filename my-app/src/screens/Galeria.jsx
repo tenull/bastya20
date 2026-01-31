@@ -151,7 +151,7 @@ export default function Galeria() {
             <MotionInView variant="fade-up" delay={0.06}>
 
               <Text color="whiteAlpha.900" fontSize={{ base: "md", md: "lg" }} mt={2} maxW="720px">
-                Betekintést nyerhet a demens idősek és a fogyatékkal élők nappali ellátásának
+                Betekintést nyerhet a demens idősek és a fogyatékossággal élők nappali ellátásának
                 mindennapjaiba.
               </Text>
             </MotionInView>

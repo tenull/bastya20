@@ -24,8 +24,8 @@ const NAV = [
     {
         name: "ALAPSZOLGÁLTATÁS",
         children: [
-            { name: "Demens idősek nappali ellátása", route: "/alapellatas/demens-nappali" },
-            { name: "Fogyatékkal élők nappali ellátása", route: "/alapellatas/fogyatekkal-elok-nappali" },
+            { name: "Idősek / Demens idősek nappali ellátása", route: "/alapellatas/demens-nappali" },
+            { name: "Kihívással élők nappali ellátása", route: "/alapellatas/kihivassal-elok-nappali" },
             { name: "Támogató szolgáltatás", route: "/alapellatas/tamogato-szolgaltatas" },
         ],
     },
@@ -126,7 +126,7 @@ const Header = () => {
                                     if (!item.children) {
                                         return (
                                             <NavLink route={item.route} key={item.route}>
-                                                <Text display="flex" alignItems="center" fontWeight="medium">
+                                                <Text fontSize={{base:'16',md:'14',lg:'14'}} display="flex" alignItems="center" fontWeight="medium">
                                                     {item.name}
                                                 </Text>
                                             </NavLink>

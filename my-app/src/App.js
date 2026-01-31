@@ -42,7 +42,7 @@ function App() {
               <Route path="/alapszolgaltatas" element={<Alapellatas />} />
               <Route path="/szakositott" element={<SzakositottEllatas />} />
               <Route path="/alapellatas/demens-nappali" element={<DemensNappali />} />
-              <Route path="/alapellatas/fogyatekkal-elok-nappali" element={<FogyatekkalElok />} />
+              <Route path="/alapellatas/kihivassal-elok-nappali" element={<FogyatekkalElok />} />
               <Route path="/alapellatas/tamogato-szolgaltatas" element={<TamogatoSzolg />} />
               <Route path="/szakositott/bastya-idosotthon" element={<BastyaIdos />} />
               <Route path="/szakositott/forras-idosotthon" element={<ForrasIdos />} />

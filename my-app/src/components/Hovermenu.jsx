@@ -25,6 +25,7 @@ const HoverMenu =({ label, items, handleTopScroll })=> {
         _focus={{ boxShadow: "none" }}
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
+        fontSize={{base:'16',md:'14',lg:'14'}}
       >
         {label}
       </MenuButton>

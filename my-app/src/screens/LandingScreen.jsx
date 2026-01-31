@@ -1,6 +1,7 @@
 import CaptionCarousel from "../components/CarouselLandingScreen";
 import HomeServices from "../components/HomeServices";
 import WhyDifferent from "../components/WhyDifferent";
+import Youtube from "../components/Youtube";
 export default function LandingScreen() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function LandingScreen() {
         </Container>
       </Box> */}
       <WhyDifferent />
+      <Youtube/>
       <HomeServices />
       {/* <SzolgSection />
       <AboutSection /> */}

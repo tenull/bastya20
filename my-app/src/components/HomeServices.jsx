@@ -46,19 +46,19 @@ const groups = [
     subtitle: "Nappali ellátás szolgáltatásai",
     items: [
       {
-        title: "Demens idősek nappali ellátása",
+        title: "Idősek / Demens idősek nappali ellátása",
         desc: "Nappali felügyelet, készségfejlesztés, esetkezelés, szeretetteljes légkör.",
         icon: MdOutlineGroups,
         to: "/alapellatas/demens-nappali",
       },
       {
-        title: "Fogyatékkal élők nappali ellátása",
+        title: "Kihívással élők nappali ellátása",
         desc: "Nappali felügyelet, készségfejlesztés, esetkezelés, szeretetteljes légkör.",
         icon: MdOutlineAccessibilityNew,
-        to: "/alapellatas/fogyatekkal-elok-nappali",
+        to: "/alapellatas/kihivassal-elok-nappali",
       },
       {
-        title: "Támogató szolgáltatás",
+        title: `Támogató szolgáltatás   `,
         desc: "Személyi segítés és szállítás.",
         icon: MdOutlineHandshake,
         to: "/alapellatas/tamogato-szolgaltatas",
@@ -86,6 +86,7 @@ function ServiceCard({ title, desc, icon: Icon, to }) {
       flexDirection="column"
       justifyContent="space-between"
       alignItems='center'
+      minW={{base:'360px',lg:'100%'}}
     >
       <Stack spacing={4} align="center" justifyContent='center'>
         <Box
@@ -94,6 +95,7 @@ function ServiceCard({ title, desc, icon: Icon, to }) {
           rounded="2xl"
           display="grid"
           placeItems="center"
+          
         >
           <Box
             as={Icon}
@@ -104,7 +106,7 @@ function ServiceCard({ title, desc, icon: Icon, to }) {
           />
         </Box>
 
-        <Heading h="44px" fontSize="lg" fontWeight="900" textAlign="center" lineHeight="1.2">
+        <Heading  h="44px" fontSize="lg" fontWeight="900" textAlign="center" lineHeight="1.2">
           {title}
         </Heading>
 
@@ -169,8 +171,9 @@ export default function HomeServicesV2() {
             <SimpleGrid
               columns={{
                 base: 1,
-                sm: 2,
-                md: g.items.length === 2 ? 2 : 3,
+                sm: 1,
+                md:2,
+                lg: g.items.length === 2 ? 2 : 3,
               }}
               spacing={6}
               justifyItems="center"

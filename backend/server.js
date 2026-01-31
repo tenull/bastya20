@@ -1,3 +1,4 @@
+import "dotenv/config"; 
 import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoutes.js";
@@ -11,8 +12,6 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
-
-app.use(cors());
 
 app.use(express.json());
 

@@ -21,15 +21,21 @@ import { Link as ReactLink } from "react-router-dom";
 
 const relatedDocs = [
   {
-    title: "Kérelem a fogyatékos személyek nappali ellátása",
+    title: "Kérelem a kihívással élő személyek nappali ellátásához",
     description:
-      "A fogyatékos személyek nappali ellátása,mint személyes gondoskodást nyújtó szociális ellátás igénybevételére",
+      "",
     link: "/images/dokumentum/nappali/fogykerelem.docx",
   },
   {
     title: "Megállapodás",
-    description: "Fogyatékossággal élő személyek nappali ellátása",
+    description: "Kihívással élő személyek nappali ellátása",
     link: "/images/dokumentum/nappali/megallapodasfogy.docx",
+  },
+  {
+    title: "Egészségi állapotra vonatkozó igazolás",
+    description:
+      "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
   },
 ];
 
@@ -63,7 +69,7 @@ const FogyatekkalElok = () => {
           >
             <MotionInView y={12}>
               <Heading color="white" fontWeight="900" fontSize={{ base: "3xl", md: "5xl" }}>
-                FOGYATÉKKAL ÉLŐK NAPPALI ELLÁTÁSA
+                KIHÍVÁSSAL ÉLŐK NAPPALI ELLÁTÁSA
               </Heading>
             </MotionInView>
           </Box>
@@ -80,11 +86,11 @@ const FogyatekkalElok = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-         <BreadcrumbItem>
+          <BreadcrumbItem>
             <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
-            <Text>Fogyatékkal élők nappali ellátása</Text>
+            <Text>Kihívással élők nappali ellátása</Text>
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
@@ -102,7 +108,7 @@ const FogyatekkalElok = () => {
             >
               <Stack spacing={4}>
                 <Heading fontSize={{ base: "xl", md: "2xl" }} fontWeight="900">
-                  Fogyatékkal élők nappali ellátása
+                  Kihívással élők nappali ellátása
                 </Heading>
 
                 <Box w="90px" h="4px" bg="yellow.400" rounded="full" />
@@ -114,6 +120,30 @@ const FogyatekkalElok = () => {
                   bekapcsolásuk segítése.
                 </Text>
               </Stack>
+
+
+               <SimpleGrid mt={5} columns={{ base: 1, md: 4 }} spacing={4} mb={{ base: 3, md: 3 }}>
+                            {[
+                              { k: "Férőhely", v: "25 fő" },
+                              { k: "Elhelyezkedés", v: "4450, Tiszalök, Damjanich utca 24." },
+                              { k: "Akadálymentesítés", v: "Rámpa" },
+                              { k: "Ellátási terület", v: "Tiszalök, Tiszaeszlár, Tiszavasvári, Tiszadada, Tiszadob" },
+                            ].map((x) => (
+                              <Box
+                                key={x.k}
+                                bg="gray.50"
+                                borderWidth="1px"
+                                borderColor="gray.200"
+                                rounded="2xl"
+                                p={5}
+                                textAlign="center"
+                                lineHeight='normal'
+                              >
+                                <Text fontWeight="900">{x.k}</Text>
+                                <Text mt={3}  color="gray.700">{x.v}</Text>
+                              </Box>
+                            ))}
+                          </SimpleGrid>
             </Box>
           </MotionInView>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
@@ -191,7 +221,7 @@ const FogyatekkalElok = () => {
               <Text color="gray.700" lineHeight="1.8">
                 Intézményünk a helyi igényekhez igazodó közösségi programokat szervez, valamint
                 helyet biztosít közösségi kezdeményezéseknek és csoportfoglalkozásoknak.
-                A nyitott működés lehetőséget teremt a szociális izoláció megelőzésére.
+
               </Text>
             </Box>
           </MotionInView>
@@ -243,11 +273,10 @@ const FogyatekkalElok = () => {
               p={{ base: 6, md: 8 }}
             >
               <Heading fontSize="lg" fontWeight="900">
-                Jogszabályi háttér
+                Fontos információ az igénybevételhez!
               </Heading>
-              <Text mt={2} color="whiteAlpha.900" lineHeight="1.8">
-                A szolgáltatás a szociális igazgatásról és szociális ellátásokról szóló
-                1993. évi III. törvény 65/F § alapján működik.
+              <Text mt={2} display='flex' color="whiteAlpha.900" lineHeight="1.8">
+              A kérelem és az egészségi állapotra vonatkozó igazolás mellé csatolni kell a{" "} <Text ms='1' me={1} fontWeight='900'> {" "}fogyatékosságot megállapító</Text> dokumentumot.
               </Text>
             </Box>
           </MotionInView>

@@ -146,7 +146,7 @@ const Misszio = () => {
                             <Text textAlign='justify'>
                                 Krisztus példáját követve törekszünk arra, hogy mindenkit – kortól, állapottól vagy
                                 háttértől függetlenül – a teremtettségében rejlő méltósággal és szeretettel fogadjunk.
-                                Az idősek, a fogyatékkal élők, a betegséggel küzdők életének támogatása számunkra nem
+                                Az idősek, a fogyatékossággal élők, a betegséggel küzdők életének támogatása számunkra nem
                                 csupán segítségnyújtás, hanem a hitből fakadó tanúságtétel.
                             </Text>
 

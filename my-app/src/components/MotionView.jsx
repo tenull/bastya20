@@ -9,7 +9,6 @@ export default function MotionInView({
   duration = 0.5,
   once = true,
   amount = 0.25,
-  // új:
   x = 0,
   y = 16,
   scale = 1,

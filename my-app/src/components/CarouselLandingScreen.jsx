@@ -86,7 +86,9 @@ const settings = {
         </Slider>
       </Box>
       <Box position="absolute" inset={0} zIndex={3} display="flex" alignItems="center">
-        <Container maxW="container.xl">
+        <Container 
+        mt={{base:10,md:0}}
+        maxW="container.xl">
           <Stack
             spacing={{ base: 5, md: 6 }}
             maxW="3xl"
@@ -189,7 +191,7 @@ const settings = {
           </Stack>
         </Container>
       </Box>
-      <Box position="absolute" bottom={-1} width="100%" height="auto" zIndex={2}>
+      <Box position="absolute" bottom={-1} width="100%" height="auto" zIndex={3}>
         <svg
           style={{ transform: "rotate(0deg)", transition: "0.3s", pointerEvents: "none" }}
           viewBox="0 0 1440 490"

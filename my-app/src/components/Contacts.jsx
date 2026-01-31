@@ -82,7 +82,7 @@ export default function Contacts() {
                                 <Link
                                     href="tel:+36301628381"
                                     color=""
-                                    fontWeight="900"
+                                    
                                     _hover={{ textDecoration: "none", color: "yellow.400" }}
                                 >
                                     +36/30-162-8381
@@ -91,7 +91,7 @@ export default function Contacts() {
                                 <Link
                                     href="tel:+36309009539"
                                     color=""
-                                    fontWeight="900"
+                                    
                                     _hover={{ textDecoration: "none", color: "yellow.400" }}
                                 >
                                     +36/30-900-9539
@@ -100,7 +100,7 @@ export default function Contacts() {
                                 <Link
                                     href="tel:+36301449427"
                                     color=""
-                                    fontWeight="900"
+                                    
                                     _hover={{ textDecoration: "none", color: "yellow.400" }}
                                 >
                                     +36/30-144-9427

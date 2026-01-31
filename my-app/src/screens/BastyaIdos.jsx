@@ -10,7 +10,9 @@ import {
   SimpleGrid,
   Icon,
   LinkBox,
-  LinkOverlay
+  LinkOverlay,
+  List,
+  ListItem
 } from "@chakra-ui/react";
 import MotionInView from "../components/MotionView";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -103,9 +105,13 @@ const BastyaIdos = () => {
       <Box py={{ base: 10, md: 12 }}>
         <Container maxW="container.lg">
           <MotionInView variant="zoom-up">
-            <Text textAlign="center" fontWeight="900" fontSize={{ base: "2xl", md: "4xl" }}>
+            <Box display='flex' flexDirection='column' alignItems='center'>
+              <Heading mb={5} textAlign="center" fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900">
               ELÉRHETŐ SZOBÁK
-            </Text>
+            </Heading>
+             <Box w="90px" h="4px" bg="yellow.400" rounded="full" /> 
+            </Box>
+           
           </MotionInView>
 
           <Flex
@@ -173,11 +179,12 @@ const BastyaIdos = () => {
             </Stack>
 
             {/* Gyors tények */}
-            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mb={{ base: 8, md: 10 }}>
+            <SimpleGrid columns={{ base: 1, md: 4 }} spacing={4} mb={{ base: 8, md: 10 }}>
               {[
                 { k: "Férőhely", v: "34 fő" },
                 { k: "Elhelyezkedés", v: "4450, Tiszalök Hősök tere 7/a" },
                 { k: "Akadálymentesítés", v: "Rámpa, lift" },
+                { k: "Ellátási terület", v: "Országos" },
               ].map((x) => (
                 <Box
                   key={x.k}
@@ -189,7 +196,7 @@ const BastyaIdos = () => {
                   textAlign="center"
                 >
                   <Text fontWeight="900">{x.k}</Text>
-                  <Text color="gray.700">{x.v}</Text>
+                  <Text mt={3}  color="gray.700">{x.v}</Text>
                 </Box>
               ))}
             </SimpleGrid>
@@ -235,12 +242,14 @@ const BastyaIdos = () => {
                   Egészségügyi és gondozási háttér
                 </Heading>
                 <Text>
-                  Intézményünk rendelkezik jól felszerelt orvosi és nővérszobával, betegszobával,
-                  valamint öltözővel. Az intézmény mosodával is rendelkezik. A bútorzat és a
-                  berendezési tárgyak az ellátottak életkori sajátosságaihoz és egészségi állapotához
-                  igazodnak.
+                  Intézményünk szakmailag felkészült, elhivatott munkatársakkal biztosítja az ellátást. Csapatunk tagjai szakképzett ápolók, gondozók és egészségügyi szakemberek, akik megfelelő végzettséggel és több éves tapasztalattal rendelkeznek.
+
+                  Kiemelten fontos számunkra a folyamatos szakmai fejlődés, ezért munkatársaink rendszeresen részt vesznek továbbképzéseken és szakmai programokon. Munkánk során a biztonság, a szakmaiság és az emberközpontú szemlélet áll a középpontban.
+
+                  Lakóink számára 24 órás felügyeletet és gondoskodást biztosítunk, figyelembe véve egyéni szükségleteiket és egészségi állapotukat.
                 </Text>
               </Box>
+
 
               <Box>
                 <Heading fontSize="lg" fontWeight="900" mb={2}>
@@ -252,15 +261,60 @@ const BastyaIdos = () => {
                 </Text>
               </Box>
 
+              <MotionInView y={10}>
+                <Box
+                  mt={8}
+                  bg="white"
+                  rounded="2xl"
+                  borderWidth="1px"
+                  borderColor="gray.200"
+                  p={6}
+                  boxShadow="sm"
+                >
+                  <Heading fontSize="lg" fontWeight="900" mb={3}>
+                    Idősotthon szolgáltatásai:
+                  </Heading>
+
+                  <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={4} mt={4}>
+                    {[
+                      "24 órás felügyelet",
+                      "Orvosi ellátás",
+                      "Gyógyszerelés felügyelete, adagolása",
+                      "Szakápolás",
+                      "Demens ellátás",
+                      "Személyes higiénés segítségnyújtás",
+                      "Napi ötszöri étkeztetés",
+                      "Mentális támogatás",
+                      "Hitéleti alkalmak",
+                      "Lelkigondozás",
+                      "Gyógytorna",
+                      "Terápiás foglalkozások"
+                    ].map((s) => (
+                      <Box
+                        key={s}
+                        bg="gray.50"
+                        borderWidth="1px"
+                        borderColor="gray.200"
+                        rounded="xl"
+                        p={4}
+                        textAlign="center"
+                        fontWeight="700"
+                        lineHeight='normal'
+                      >
+                        {s}
+                      </Box>
+                    ))}
+                  </SimpleGrid>
+                </Box>
+              </MotionInView>
+
               <Box bg="gray.900" color="white" rounded="2xl" p={{ base: 5, md: 7 }}>
                 <Text fontWeight="900" fontSize={{ base: "md", md: "lg" }}>
                   Az idősotthonok célja
                 </Text>
                 <Text mt={2} color="whiteAlpha.900">
                   Biztonságos, egészségügyi és szociális szempontból megfelelő környezetet biztosítani
-                  azok számára, akik otthonukban már nem képesek önálló életvitelre. Szolgáltatásaink
-                  része az étkezés, higiéniai segítség, orvosi és ápolási felügyelet, valamint közösségi
-                  programok.
+                  azok számára, akik otthonukban már nem képesek önálló életvitelre.
                 </Text>
               </Box>
 

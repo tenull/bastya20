@@ -82,15 +82,13 @@ export default function StaffCarousel({ staff, title = "Kapcsolattartók" }) {
                     </Heading>
                     
                 </MotionInView>
-
-                {/* Nyilak */}
                 <IconButton
                     aria-label="previous"
                     onClick={() => slider?.slickPrev()}
                     icon={<BiLeftArrowAlt size="28px" />}
                     position="absolute"
                     left={{ base: 2, md: -6 }}
-                    top="55%"
+                    top="65%"
                     transform="translateY(-50%)"
                     zIndex={2}
                     bg="white"
@@ -107,7 +105,7 @@ export default function StaffCarousel({ staff, title = "Kapcsolattartók" }) {
                     icon={<BiRightArrowAlt size="28px" />}
                     position="absolute"
                     right={{ base: 2, md: -6 }}
-                    top="55%"
+                    top="65%"
                     transform="translateY(-50%)"
                     zIndex={2}
                     bg="white"

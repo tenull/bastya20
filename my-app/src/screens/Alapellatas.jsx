@@ -20,14 +20,14 @@ const handleTopScroll = () => {
 
 const cards = [
   {
-    title: "Demens idősek nappali ellátása",
+    title: "Idősek / Demens idősek nappali ellátása",
     desc: "Napközbeni felügyelet, közösségi programok, mentális támogatás.",
     to: "/alapellatas/demens-nappali",
   },
   {
-    title: "Fogyatékkal élők nappali ellátása",
+    title: "Kihívással élők nappali ellátása",
     desc: "Fejlesztő foglalkozások, gondozás, közösségi jelenlét és támogatás.",
-    to: "/alapellatas/fogyatekkal-elok-nappali",
+    to: "/alapellatas/kihivassal-elok-nappali",
   },
   {
     title: "Támogató szolgáltatás",
@@ -122,7 +122,7 @@ const Alapszolgaltatas = () => {
                   }}
                   h="100%"
                 >
-                  <Stack spacing={4} h="100%" justify="space-between">
+                  <Stack textAlign='center' spacing={4} h="100%" justify="space-between">
                     <Box>
                       <Heading fontSize="xl" fontWeight="900" lineHeight="1.2">
                         {c.title}
@@ -131,25 +131,27 @@ const Alapszolgaltatas = () => {
                         {c.desc}
                       </Text>
                     </Box>
+                    <Box>
+                      <Button
+                        as={ReactLink}
+                        to={c.to}
+                        variant="outline"
+                        borderColor="yellow.400"
+                        color="black"
+                        fontWeight="900"
+                        rightIcon={<BiRightArrowAlt />}
+                        sx={{
+                          ".chakra-button__icon": { transition: "transform 0.3s ease-in-out" },
+                          "&:hover .chakra-button__icon": { transform: "translateX(6px)" },
+                        }}
+                        _hover={{ bg: "yellow.50" }}
+                        alignSelf="flex-start"
+                        onClick={handleTopScroll}
+                      >
+                        Megnyitás
+                      </Button>
+                    </Box>
 
-                    <Button
-                      as={ReactLink}
-                      to={c.to}
-                      variant="outline"
-                      borderColor="yellow.400"
-                      color="black"
-                      fontWeight="900"
-                      rightIcon={<BiRightArrowAlt />}
-                      sx={{
-                        ".chakra-button__icon": { transition: "transform 0.3s ease-in-out" },
-                        "&:hover .chakra-button__icon": { transform: "translateX(6px)" },
-                      }}
-                      _hover={{ bg: "yellow.50" }}
-                      alignSelf="flex-start"
-                      onClick={handleTopScroll}
-                    >
-                      Megnyitás
-                    </Button>
                   </Stack>
                 </Box>
               </MotionInView>

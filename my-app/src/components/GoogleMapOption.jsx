@@ -5,7 +5,7 @@ const locations = [
   {
     title: "Bástya Idősek Otthona",
     address: "4450 Tiszalök, Hősök tere 7/a",
-    position: { lat: 48.02211, lng: 21.38163 },
+    position: { lat: 48.021240, lng: 21.380936 },
   },
   {
     title: "Forrás Idősek Otthona",

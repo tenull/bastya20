@@ -30,13 +30,18 @@ const relatedDocs = [
     description: "Idős (ezen belül demens személyek) nappali ellátása.",
     link: "/images/dokumentum/nappali/idosmegallapodas.docx",
   },
+  {
+    title: "Egészségi állapotra vonatkozó igazolás",
+    description:
+      "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
+  },
 ];
 
 
 const DemensNappali = () => {
   return (
     <Box>
-      {/* HERO */}
       <Box
         w="full"
         h={{ base: "450px", md: "550px" }}
@@ -63,7 +68,7 @@ const DemensNappali = () => {
           >
             <MotionInView y={12}>
               <Heading color="white" fontWeight="900" fontSize={{ base: "3xl", md: "5xl" }}>
-                DEMENS IDŐSEK NAPPALI ELLÁTÁSA
+                IDŐSEK / DEMENS IDŐSEK <br /> NAPPALI ELLÁTÁSA
               </Heading>
             </MotionInView>
           </Box>
@@ -84,7 +89,7 @@ const DemensNappali = () => {
             <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
-            <Text>Demens Idősek Nappali Ellátása</Text>
+            <Text> Idősek /  Demens Idősek Nappali Ellátása</Text>
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
@@ -102,7 +107,7 @@ const DemensNappali = () => {
             >
               <Stack spacing={4}>
                 <Heading fontSize={{ base: "xl", md: "2xl" }} fontWeight="900">
-                  Demens idősek nappali ellátása
+                  Idősek / Demens idősek nappali ellátása
                 </Heading>
 
                 <Box w="90px" h="4px" bg="yellow.400" rounded="full" />
@@ -113,8 +118,33 @@ const DemensNappali = () => {
                   biztosítását nyújtjuk, a szükségletekhez és az egyéni állapothoz igazítva.
                 </Text>
               </Stack>
+
+               <SimpleGrid columns={{ base: 1, md: 4 }} spacing={4} mt={5} mb={{ base: 0, md: 0 }}>
+              {[
+                { k: "Férőhely", v: "17 fő" },
+                { k: "Elhelyezkedés", v: "4450, Tiszalök, Damjanich utca 24." },
+                { k: "Akadálymentesítés", v: "Rámpa" },
+                { k: "Ellátási terület", v: "Tiszalök, Tiszaeszlár, Tiszavasvári, Tiszadada, Tiszadob" },
+              ].map((x) => (
+                <Box
+                  key={x.k}
+                  bg="gray.50"
+                  borderWidth="1px"
+                  borderColor="gray.200"
+                  rounded="2xl"
+                  p={5}
+                  textAlign="center"
+                  lineHeight='normal'
+                >
+                  <Text fontWeight="900">{x.k}</Text>
+                  <Text mt={3} color="gray.700">{x.v}</Text>
+                </Box>
+              ))}
+            </SimpleGrid>
             </Box>
           </MotionInView>
+
+          
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
             <MotionInView y={10}>
               <Box bg="white" rounded="2xl" borderWidth="1px" borderColor="gray.200" p={6} boxShadow="sm">
@@ -224,10 +254,10 @@ const DemensNappali = () => {
               p={{ base: 6, md: 8 }}
             >
               <Heading fontSize="lg" fontWeight="900">
-                Fontos információ
+                Fontos információ az igénybevételhez!
               </Heading>
               <Text mt={2} color="whiteAlpha.900" lineHeight="1.8">
-                A demens személyek nappali ellátása a Pszichiátriai/Neurológiai Szakkollégium által
+                A demens személyek nappali ellátásánál a Pszichiátriai/Neurológiai Szakkollégium által
                 befogadott demencia centrum szakvéleményével rendelkező személyek számára vehető igénybe.
               </Text>
             </Box>

@@ -21,10 +21,22 @@ import { DownloadIcon } from "@chakra-ui/icons";
 
 const relatedDocs = [
   {
+    title: "Kérelem",
+    description: "Támogató szolgálat igénybe vételéhez",
+    link: "/images/dokumentum/nappali/tamogatoszolgalatkerelem .docx",
+  },
+  {
     title: "Megállapodás",
     description: "Támogató szolgálat.",
     link: "/images/dokumentum/nappali/megallapodastamogatoszolgalat.docx",
   },
+  {
+    title: "Egészségi állapotra vonatkozó igazolás",
+    description:
+      "A háziorvos, kezelőorvos vagy kórházi osztályos orvos tölti ki.",
+    link: "/images/dokumentum/egeszsegi_igazolas.pdf",
+  },
+
 ];
 
 const TamogatoSzolg = () => {
@@ -76,7 +88,7 @@ const TamogatoSzolg = () => {
           <BreadcrumbItem>
             <ReactLink to="/">Főoldal</ReactLink>
           </BreadcrumbItem>
-         <BreadcrumbItem>
+          <BreadcrumbItem>
             <ReactLink to="/alapszolgaltatas">Alapszolgáltatás</ReactLink>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
@@ -110,6 +122,27 @@ const TamogatoSzolg = () => {
                   és a társadalmi életben való aktív részvételt.
                 </Text>
               </Stack>
+               <SimpleGrid columns={{ base: 1, md: 1}} spacing={4} mt={5} mb={{ base: 0, md: 0 }}>
+              {[
+          
+      
+                { k: "Ellátási terület", v: "Tiszalök, Tiszaeszlár, Tiszavasvári, Tiszadada, Tiszadob" },
+              ].map((x) => (
+                <Box
+                  key={x.k}
+                  bg="gray.50"
+                  borderWidth="1px"
+                  borderColor="gray.200"
+                  rounded="2xl"
+                  p={5}
+                  textAlign="center"
+                  lineHeight='normal'
+                >
+                  <Text fontWeight="900">{x.k}</Text>
+                  <Text mt={3}  color="gray.700">{x.v}</Text>
+                </Box>
+              ))}
+            </SimpleGrid>
             </Box>
           </MotionInView>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
@@ -132,7 +165,7 @@ const TamogatoSzolg = () => {
                   Alapelveink
                 </Heading>
                 <Text color="gray.700" lineHeight="1.8">
-                  Olyan professzionális segítségnyújtást nyújtunk, amely a fogyatékos emberek teljes jogú
+                  Olyan professzionális segítséget nyújtani, amely a fogyatékos emberek teljes jogú
                   és egyenértékű társadalmi részvételét támogatja – függetlenül a fogyatékosság típusától
                   és mértékétől, az ellátott nemétől, kulturális hátterétől, korától vagy lakóhelyétől.
                 </Text>
@@ -196,6 +229,23 @@ const TamogatoSzolg = () => {
               </List>
             </Box>
           </MotionInView>
+                 <MotionInView y={10}>
+                      <Box
+                        mt={8}
+                        bg="gray.900"
+                        color="white"
+                        rounded="2xl"
+                        p={{ base: 6, md: 8 }}
+                      >
+                        <Heading fontSize="lg" fontWeight="900">
+                          Fontos információ az igénybevételhez!
+                        </Heading>
+                        <Text mt={2} display='flex' color="whiteAlpha.900" lineHeight="1.8">
+                        A kérelem és az egészségi állapotra vonatkozó igazolás mellé csatolni kell a{" "} <Text ms='1' me={1} fontWeight='900'> {" "}fogyatékosságot megállapító</Text> dokumentumot.
+                        </Text>
+                      </Box>
+                    </MotionInView>
+          
           <MotionInView y={10}>
             <Box
               mt={8}

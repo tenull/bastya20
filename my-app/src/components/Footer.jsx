@@ -21,7 +21,7 @@ const Footer = () => {
     {
       title: "Bástya Idősek Otthona",
       address: "4450 Tiszalök, Hősök tere 7/a",
-      position: { lat: 48.0217987, lng: 21.3795757 },
+      position: { lat: 48.021240, lng: 21.380936 },
     },
     {
       title: "Forrás Idősek Otthona",
@@ -58,7 +58,7 @@ const Footer = () => {
 
   const navSzolgLinks = [
     { label: "Demens Idősek nappali ellátása", to: "/alapellatas/demens-nappali" },
-    { label: "Fogyatékkal élők nappali ellátása", to: "/alapellatas/fogyatekkal-elok-nappali" },
+    { label: "Kihívással élők nappali ellátása", to: "/alapellatas/kihivassal-elok-nappali" },
     { label: "Támogató szolgáltatás", to: "/alapellatas/tamogato-szolgaltatas" },
     { label: "Bástya idősotthon", to: "/szakositott/bastya-idosotthon" },
     { label: "Forrás idősotthon", to: "/szakositott/forras-idosotthon" },
